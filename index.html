@@ -3,24 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-<title>TabeLaLa - Monte sua tabela com @studies_lala</title>
+<title>TabeLaLa - Monte sua tabela com @enaLaLaPril</title>
 <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Indie+Flower&family=Pacifico&family=Quicksand:wght@400;700&family=Dancing+Script&family=Architects+Daughter&family=Shadows+Into+Light&family=Roboto:wght@400;700&family=Verdana:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 <style>
 :root {
 /* Cores */
---cor-fundo-pagina: #F5EBFF;
---cor-fundo-tabela: #F8F2FF;
---cor-divisorias: #4B0082;
---cor-letras: #4A2568;
+--cor-fundo-pagina: #130A24;
+--cor-fundo-tabela: #1D1037;
+--cor-divisorias: #8059CF;
+--cor-letras: #E3DEED;
 --cor-cabecalho: #9370DB;
---cor-letras-cabecalho: #FFFFFF;
---cor-titulo: #4A2568;
---cor-assinatura: #9370DB;
+--cor-letras-cabecalho: #140A29;
+--cor-titulo: #A98DE2;
+--cor-assinatura: #A98DE2;
 --fonte-tabela: 'Comic Neue', cursive;
 --site-header-bg: #9370DB; 
-        --site-header-text: #FFFFFF;
+        --site-header-text: #140A29;
         --site-btn-bg: #9370DB;
 
         /* Novas Variáveis */
@@ -256,11 +257,43 @@
     .btn-reset { background-color: #6c757d !important; }
     .btn-reset:hover { background-color: #5a6268 !important; }
 
+    .btn-save-temp { background-color: #20B2AA !important; color: white !important; }
+    .btn-save-temp:hover { background-color: #178f89 !important; }
+
+    .btn-recent { background-color: #8E5BD9 !important; color: white !important; }
+    .btn-recent:hover { background-color: #7646bd !important; }
+
     /* Estilos do Menu Lateral */
     .section-title { font-size: 1.1rem; color: var(--cor-letras-cabecalho); border-bottom: 2px solid var(--cor-letras-cabecalho); padding-bottom: 5px; margin: 15px 0 10px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; }
     .presets-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
     .preset-btn { padding: 10px; border: none; border-radius: 10px; background-color: rgba(255, 255, 255, 0.9); cursor: pointer; font-size: 0.8rem; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 6px; color: #333; box-shadow: 0 3px 6px rgba(0,0,0,0.1); transition: all 0.2s; }
     .preset-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 10px rgba(0,0,0,0.15); background-color: #fff; }
+
+    /* GALERIA DE TEMAS (agrupados por estilo, com miniaturas) */
+    .theme-group { margin-bottom: 8px; border-radius: 10px; background: rgba(255,255,255,0.18); }
+    .theme-group > summary { cursor: pointer; padding: 10px 12px; font-weight: bold; font-size: 0.9rem; color: var(--menu-text-label); list-style: none; display: flex; align-items: center; gap: 8px; }
+    .theme-group > summary::-webkit-details-marker { display: none; }
+    .theme-group > summary::after { content: '\f078'; font-family: 'Font Awesome 6 Free'; font-weight: 900; font-size: 0.7rem; margin-left: auto; transition: transform 0.2s; }
+    .theme-group[open] > summary::after { transform: rotate(180deg); }
+    .theme-group-count { font-weight: normal; font-size: 0.75rem; opacity: 0.7; }
+    .theme-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 4px 10px 12px; }
+    .theme-card { padding: 6px; border: 2px solid transparent; border-radius: 10px; background-color: rgba(255,255,255,0.9); cursor: pointer; display: flex; flex-direction: column; gap: 6px; box-shadow: 0 3px 6px rgba(0,0,0,0.1); transition: all 0.2s; font-family: inherit; color: #333; }
+    .theme-card:hover, .theme-card:focus-visible { transform: translateY(-2px); box-shadow: 0 5px 10px rgba(0,0,0,0.18); background-color: #fff; border-color: var(--site-btn-bg); outline: none; }
+    .theme-card-name { font-size: 0.75rem; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 5px; text-align: center; line-height: 1.2; }
+    .theme-thumb { border-radius: 6px; padding: 7px 7px 6px; display: flex; flex-direction: column; gap: 4px; border: 1px solid rgba(0,0,0,0.15); }
+    .theme-thumb-title { height: 5px; width: 45%; border-radius: 3px; margin: 0 auto; }
+    .theme-thumb-table { display: grid; grid-template-columns: 1.1fr 1fr 1fr; gap: 1px; border-width: 1px; border-style: solid; border-radius: 3px; overflow: hidden; }
+    .theme-thumb-cell { height: 12px; display: flex; align-items: center; padding: 0 3px; }
+    .theme-thumb-cell i { display: block; height: 3px; width: 70%; border-radius: 2px; }
+    .theme-thumb-foot { height: 3px; width: 28%; border-radius: 2px; margin: 0 auto; }
+
+    .palette-preview { margin-top: 10px; }
+    .palette-preview .theme-thumb { max-width: 170px; margin: 0 auto; }
+    .mode-toggle { display: flex; gap: 8px; }
+    .mode-toggle input { display: none; }
+    .mode-opt { flex: 1; padding: 9px 6px; border: 2px solid transparent; border-radius: 10px; background: rgba(255,255,255,0.55); color: #333; cursor: pointer; font-weight: bold; font-size: 0.85rem; display: flex; align-items: center; justify-content: center; gap: 6px; transition: all 0.2s; font-family: inherit; }
+    .mode-opt:hover { background: rgba(255,255,255,0.85); }
+    #paletteDark:not(:checked) ~ .mode-light, #paletteDark:checked ~ .mode-dark { background: #fff; border-color: var(--site-btn-bg); box-shadow: 0 3px 6px rgba(0,0,0,0.15); }
     
     .control-group { margin-bottom: 12px; }
     .control-group label { display: block; margin-bottom: 4px; font-size: 0.9rem; font-weight: bold; color: var(--menu-text-label); }
@@ -382,6 +415,20 @@
     .modal-btn-primary { background-color: #1DA1F2; color: white; }
     .modal-btn-secondary { background-color: #6c757d; color: white; }
 
+    /* TABELAS RECENTES */
+    .recent-intro { color: #555; margin-bottom: 15px; font-size: 0.95rem; }
+    .recent-list { display: flex; flex-direction: column; gap: 10px; text-align: left; }
+    .recent-item { display: flex; align-items: center; gap: 12px; padding: 12px; border: 1px solid #e3e3e3; border-radius: 8px; background: #fafafa; flex-wrap: wrap; }
+    .recent-swatch { display: flex; flex-shrink: 0; border-radius: 6px; overflow: hidden; border: 1px solid #ccc; }
+    .recent-swatch span { display: block; width: 14px; height: 36px; }
+    .recent-info { flex: 1; min-width: 140px; }
+    .recent-name { font-weight: bold; color: #333; word-break: break-word; }
+    .recent-date { font-size: 0.8rem; color: #777; margin-top: 2px; }
+    .recent-actions { display: flex; gap: 8px; }
+    .recent-open { background-color: #8E5BD9; color: white; }
+    .recent-del { background-color: #d9534f; color: white; }
+    .recent-empty { color: #777; text-align: center; padding: 20px 0; }
+
     .preview-container { margin: 20px 0; border: 1px solid #ddd; border-radius: 8px; padding: 15px; background-color: #f9f9f9; display: flex; flex-direction: column; align-items: center; }
     .preview-title { font-weight: bold; margin-bottom: 10px; color: #333; text-align: center; }
     .preview-image-container { max-width: 100%; overflow: auto; display: flex; justify-content: center; }
@@ -423,11 +470,470 @@
     .loading { display: none; text-align: center; padding: 20px; }
     .loading-spinner { border: 4px solid #f3f3f3; border-top: 4px solid #1DA1F2; border-radius: 50%; width: 40px; height: 40px; animation: spin 2s linear infinite; margin: 0 auto 15px; }
     @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+    /* =====================================================================
+       REFINAMENTO VISUAL
+       Só muda a aparência do site (cabeçalho, menu, botões, janelas e chat).
+       A tabela, o título e a assinatura não são alterados, então os prints,
+       o PDF e as imagens compartilhadas continuam idênticos.
+       ===================================================================== */
+    :root {
+        --ui-font: 'Quicksand', 'Roboto', system-ui, sans-serif;
+        --ui-shadow-sm: 0 1px 2px rgba(30,15,60,0.10), 0 2px 6px rgba(30,15,60,0.08);
+        --ui-shadow-md: 0 2px 4px rgba(30,15,60,0.10), 0 8px 20px rgba(30,15,60,0.14);
+        --ui-shadow-lg: 0 24px 60px rgba(25,12,50,0.35), 0 6px 16px rgba(25,12,50,0.18);
+        --ui-ease: cubic-bezier(0.22, 0.8, 0.24, 1);
+    }
+
+    html { scroll-behavior: smooth; }
+    body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility; }
+    ::selection { background: rgba(147,112,219,0.35); }
+
+    /* Fonte única e elegante para o site (a fonte escolhida vale para a tabela) */
+    .site-header, .sidebar-container, .actions-panel, .modal, .chat-box, .info-box, .btn-back, .btn-info, .merge-overlay { font-family: var(--ui-font); }
+    .sidebar-container button, .sidebar-container select, .sidebar-container input,
+    .actions-panel button, .modal button, .modal textarea, .chat-box button, .btn-back, .btn-info { font-family: inherit; }
+
+    /* Cabeçalho */
+    .site-header {
+        padding: 16px 24px;
+        background-image: linear-gradient(180deg, rgba(255,255,255,0.20) 0%, rgba(255,255,255,0) 70%);
+        box-shadow: inset 0 -1px 0 rgba(0,0,0,0.08), 0 8px 28px rgba(30,15,60,0.16);
+    }
+    .site-header h1 { font-family: var(--ui-font); font-weight: 700; letter-spacing: 0.02em; font-size: 1.4rem; text-shadow: 0 1px 2px rgba(0,0,0,0.12); }
+
+    /* Menu lateral */
+    .sidebar-container {
+        padding: 22px 20px 30px;
+        background-image: linear-gradient(180deg, rgba(255,255,255,0.12) 0%, rgba(0,0,0,0.05) 100%);
+        box-shadow: 6px 0 28px rgba(30,15,60,0.10);
+        scrollbar-width: thin;
+        scrollbar-color: rgba(128,128,128,0.5) transparent;
+    }
+    .sidebar-container::-webkit-scrollbar { width: 8px; }
+    .sidebar-container::-webkit-scrollbar-track { background: transparent; }
+    .sidebar-container::-webkit-scrollbar-thumb { background: rgba(128,128,128,0.45); border-radius: 8px; }
+    .sidebar-container::-webkit-scrollbar-thumb:hover { background: rgba(128,128,128,0.7); }
+
+    .btn-toggle-sidebar {
+        border-width: 1.5px; border-radius: 14px; padding: 11px 15px; letter-spacing: 0.02em;
+        background: rgba(255,255,255,0.14); box-shadow: var(--ui-shadow-sm);
+        transition: background 0.25s, transform 0.25s var(--ui-ease), box-shadow 0.25s;
+    }
+    .btn-toggle-sidebar:hover { box-shadow: var(--ui-shadow-md); }
+
+    .section-title {
+        display: flex; align-items: center; gap: 12px;
+        font-size: 0.78rem; font-weight: 700; letter-spacing: 0.16em;
+        border-bottom: none; padding-bottom: 0; margin: 28px 0 14px;
+    }
+    .section-title::after { content: ''; flex: 1; height: 1px; background: currentColor; opacity: 0.35; }
+    .btn-toggle-sidebar + .section-title { margin-top: 6px; }
+
+    .control-group { margin-bottom: 14px; }
+    .control-group label { font-size: 0.82rem; letter-spacing: 0.02em; margin-bottom: 6px; opacity: 0.92; }
+    input[type="range"] { -webkit-appearance: none; appearance: none; width: 100%; height: 22px; background: transparent; cursor: pointer; margin: 0 0 6px; }
+    input[type="range"]::-webkit-slider-runnable-track { height: 6px; border-radius: 6px; background: rgba(0,0,0,0.22); box-shadow: inset 0 1px 2px rgba(0,0,0,0.15), 0 1px 0 rgba(255,255,255,0.25); }
+    input[type="range"]::-moz-range-track { height: 6px; border-radius: 6px; background: rgba(0,0,0,0.22); }
+    input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 20px; height: 20px; margin-top: -7px; border-radius: 50%; background: #fff; border: 2px solid var(--site-btn-bg); box-shadow: 0 2px 6px rgba(30,15,60,0.3); transition: transform 0.15s var(--ui-ease); }
+    input[type="range"]::-moz-range-thumb { width: 16px; height: 16px; border-radius: 50%; background: #fff; border: 2px solid var(--site-btn-bg); box-shadow: 0 2px 6px rgba(30,15,60,0.3); }
+    input[type="range"]:hover::-webkit-slider-thumb { transform: scale(1.12); }
+
+    .color-input-container {
+        padding: 9px 12px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.28);
+        background: rgba(255,255,255,0.20); box-shadow: var(--ui-shadow-sm);
+        transition: background 0.25s, transform 0.25s var(--ui-ease), box-shadow 0.25s;
+    }
+    .color-input-container:hover { background: rgba(255,255,255,0.32); transform: translateY(-1px); box-shadow: var(--ui-shadow-md); }
+    .color-preview { width: 24px; height: 24px; border-radius: 8px; box-shadow: 0 0 0 1px rgba(0,0,0,0.12), 0 2px 5px rgba(0,0,0,0.15); }
+
+    select, .search-input {
+        border: 1px solid rgba(0,0,0,0.06); border-radius: 12px; padding: 10px 12px;
+        box-shadow: var(--ui-shadow-sm); font-family: inherit; font-size: 0.9rem;
+    }
+    .search-input { padding: 11px 14px; background: #fff; }
+    select:focus-visible, .search-input:focus-visible, .modal textarea:focus-visible { outline: 3px solid rgba(147,112,219,0.45); outline-offset: 1px; }
+
+    .btn-format {
+        border-radius: 10px; padding: 9px 10px; box-shadow: var(--ui-shadow-sm);
+        transition: transform 0.2s var(--ui-ease), box-shadow 0.2s, background 0.2s;
+    }
+    .btn-format:hover { box-shadow: var(--ui-shadow-md); }
+    .selection-mode-wrapper { border-radius: 12px; padding: 10px 12px; background: rgba(255,255,255,0.20); box-shadow: var(--ui-shadow-sm); }
+    .checkbox-group { margin-bottom: 12px; }
+
+    .btn-palette-gen {
+        border-radius: 12px; letter-spacing: 0.02em;
+        background-image: linear-gradient(180deg, rgba(255,255,255,0.16), rgba(255,255,255,0) 60%);
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), 0 6px 14px rgba(30,15,60,0.22);
+        transition: transform 0.2s var(--ui-ease), box-shadow 0.2s, filter 0.2s;
+    }
+    .btn-palette-gen:hover { transform: translateY(-2px); filter: brightness(1.08); box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), 0 10px 20px rgba(30,15,60,0.28); }
+    .btn-palette-gen:active { transform: scale(0.98); }
+
+    /* Galeria de temas e seletor claro/escuro */
+    .theme-group { border-radius: 14px; background: rgba(255,255,255,0.16); border: 1px solid rgba(255,255,255,0.24); overflow: hidden; }
+    .theme-group > summary { padding: 11px 14px; transition: background 0.2s; }
+    .theme-group > summary:hover { background: rgba(255,255,255,0.14); }
+    .theme-card { border-radius: 12px; transition: transform 0.2s var(--ui-ease), box-shadow 0.2s, border-color 0.2s; }
+    .mode-opt { border-radius: 12px; box-shadow: var(--ui-shadow-sm); }
+    .theme-card-name { display: block; line-height: 1.25; }
+    .theme-card-name i { margin-right: 5px; }
+
+    /* Botões de ação (cores de cada botão mantidas) */
+    .actions-panel { display: grid; grid-template-columns: repeat(auto-fit, minmax(215px, 1fr)); gap: 12px; margin-top: 30px; max-width: 1000px; margin-left: auto; margin-right: auto; }
+    .btn-action {
+        border-radius: 12px; letter-spacing: 0.02em; flex: none; min-width: 0; white-space: nowrap;
+        background-image: linear-gradient(180deg, rgba(255,255,255,0.22) 0%, rgba(255,255,255,0) 55%);
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.35), 0 6px 14px rgba(30,15,60,0.16);
+        transition: transform 0.2s var(--ui-ease), box-shadow 0.2s, filter 0.2s, background-color 0.3s;
+    }
+    .btn-action:hover { filter: brightness(0.95); transform: translateY(-2px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.35), 0 12px 22px rgba(30,15,60,0.22); }
+    .btn-action:active { transform: translateY(0) scale(0.98); }
+    .btn-show-sidebar { box-shadow: var(--ui-shadow-md); transition: transform 0.25s var(--ui-ease); }
+    .btn-back, .btn-info { border-radius: 12px; box-shadow: var(--ui-shadow-md); }
+
+    /* Rolagem da tabela */
+    .table-wrapper { scrollbar-width: thin; scrollbar-color: rgba(128,128,128,0.5) transparent; }
+    .table-wrapper::-webkit-scrollbar { height: 10px; }
+    .table-wrapper::-webkit-scrollbar-track { background: transparent; }
+    .table-wrapper::-webkit-scrollbar-thumb { background: rgba(128,128,128,0.45); border: none; border-radius: 10px; }
+    .table-wrapper::-webkit-scrollbar-thumb:hover { background: rgba(128,128,128,0.7); }
+
+    /* Janelas (modais) */
+    .modal { background-color: rgba(25,12,50,0.55); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+    .modal[style*="display: flex"] { animation: lalaFade 0.25s ease both; }
+    .modal[style*="display: flex"] .modal-content { animation: lalaRise 0.35s var(--ui-ease) both; }
+    .modal-content { border-radius: 24px; padding: 36px 34px 30px; box-shadow: inset 0 5px 0 var(--site-btn-bg), var(--ui-shadow-lg); }
+    .modal h2 { font-size: 1.8rem; margin-top: 0; color: var(--cor-divisorias); color: color-mix(in srgb, var(--cor-divisorias) 72%, #1a1030); }
+    .modal textarea { border: 1px solid #e3def0; border-radius: 14px; padding: 14px; line-height: 1.5; }
+    .modal-actions { gap: 12px; }
+    .modal-btn {
+        border-radius: 12px; padding: 11px 22px; letter-spacing: 0.01em; box-shadow: var(--ui-shadow-sm);
+        transition: transform 0.2s var(--ui-ease), box-shadow 0.2s, filter 0.2s;
+    }
+    .modal-btn:hover { transform: translateY(-2px); box-shadow: var(--ui-shadow-md); filter: brightness(1.06); }
+    .modal-btn:active { transform: scale(0.97); }
+    .recado-text { line-height: 1.75; font-size: 1.02rem; }
+    .instructions { border-radius: 14px; border-left-width: 5px; background-color: #f3f9ff; }
+    .preview-container { border-radius: 16px; background-color: #faf8ff; border-color: #ece7f7; }
+    .preview-image { border-radius: 10px; box-shadow: var(--ui-shadow-sm); }
+    .recent-item { border-radius: 14px; background: #fcfbff; border-color: #ebe6f6; transition: box-shadow 0.2s, transform 0.2s var(--ui-ease); }
+    .recent-item:hover { box-shadow: var(--ui-shadow-md); transform: translateY(-1px); }
+    .recent-swatch { border-radius: 8px; }
+    .info-box { border-radius: 16px; padding: 16px 18px; box-shadow: var(--ui-shadow-md); }
+
+    /* Chat */
+    .chat-icon { background-image: linear-gradient(145deg, rgba(255,255,255,0.28), rgba(255,255,255,0) 60%); box-shadow: inset 0 1px 0 rgba(255,255,255,0.35), 0 10px 24px rgba(30,15,60,0.35); transition: transform 0.25s var(--ui-ease), box-shadow 0.25s; }
+    .chat-icon-container:hover .chat-icon { transform: scale(1.07); }
+    .chat-box { border-radius: 22px; box-shadow: var(--ui-shadow-lg); }
+    .chat-header { color: var(--site-header-text); padding: 16px 18px; letter-spacing: 0.02em; background-image: linear-gradient(180deg, rgba(255,255,255,0.18), rgba(255,255,255,0)); }
+    .chat-messages { padding: 18px; gap: 12px; }
+    .message { font-family: var(--ui-font); font-weight: 500; line-height: 1.5; border-radius: 18px; box-shadow: 0 1px 2px rgba(30,15,60,0.08); }
+    .message.bot { background-color: #f4f1fa; }
+    .message.user { background-color: #e6d9ff; }
+    .chat-replies { padding: 14px 18px 18px; border-top-color: #efeaf8; }
+    .chat-reply-btn { border-radius: 12px; padding: 11px 14px; font-family: var(--ui-font); font-weight: 600; background: #fff; border-color: #e5e0f1; transition: background 0.2s, border-color 0.2s, transform 0.2s var(--ui-ease); }
+    .chat-reply-btn:hover { transform: translateX(3px); }
+
+    /* Navegação por teclado: contorno visível em qualquer cor de tema */
+    .sidebar-container button:focus-visible, .sidebar-container summary:focus-visible, .sidebar-container .color-input-container:focus-within,
+    .actions-panel button:focus-visible { outline: 3px solid var(--menu-text-label); outline-offset: 2px; }
+    .modal button:focus-visible, .chat-box button:focus-visible, .chat-icon-container:focus-visible { outline: 3px solid var(--site-btn-bg); outline-offset: 2px; }
+
+    @keyframes lalaFade { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes lalaRise { from { opacity: 0; transform: translateY(14px) scale(0.97); } to { opacity: 1; transform: translateY(0) scale(1); } }
+
+    @media (max-width: 900px) {
+        .site-header h1 { font-size: 1.1rem; }
+        .modal-content { padding: 30px 20px 24px; border-radius: 20px; }
+        .actions-panel { grid-template-columns: repeat(2, 1fr); }
+        .btn-action { white-space: normal; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+    }
+
+    /* CONVITE PARA O CANAL DO TELEGRAM */
+    .modal-btn-telegram { background-color: #229ED9; color: white; }
+    .tg-convite { position: fixed; left: 0; right: 0; bottom: 24px; margin: 0 auto; width: min(580px, calc(100% - 32px)); z-index: 1500; display: flex; align-items: center; gap: 16px; padding: 20px 22px; background: #fff; color: #2b2540; border-radius: 22px; box-shadow: inset 0 4px 0 #229ED9, 0 24px 60px rgba(25,12,50,0.35), 0 6px 16px rgba(25,12,50,0.18); font-family: 'Quicksand', 'Roboto', system-ui, sans-serif; animation: tgSobe 0.5s cubic-bezier(0.22, 0.8, 0.24, 1) both; }
+    .tg-convite-icone { flex-shrink: 0; width: 52px; height: 52px; border-radius: 50%; background: linear-gradient(145deg, #37b6ee, #1f8fc7); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 28px; box-shadow: 0 6px 14px rgba(34,158,217,0.4); }
+    .tg-convite-corpo { flex: 1; min-width: 0; }
+    .tg-convite-texto { margin: 0 0 12px; font-weight: 700; line-height: 1.45; font-size: 1rem; padding-right: 18px; }
+    .tg-convite-botao { display: inline-flex; align-items: center; gap: 8px; border: none; cursor: pointer; background-color: #229ED9; background-image: linear-gradient(180deg, rgba(255,255,255,0.22), rgba(255,255,255,0) 55%); color: #fff; font-family: inherit; font-weight: 700; font-size: 0.95rem; padding: 11px 20px; border-radius: 12px; box-shadow: inset 0 1px 0 rgba(255,255,255,0.35), 0 6px 14px rgba(34,158,217,0.35); transition: transform 0.2s, box-shadow 0.2s, filter 0.2s; }
+    .tg-convite-botao:hover { transform: translateY(-2px); filter: brightness(0.96); box-shadow: inset 0 1px 0 rgba(255,255,255,0.35), 0 10px 20px rgba(34,158,217,0.42); }
+    .tg-convite-botao:active { transform: scale(0.98); }
+    .tg-convite-fechar { position: absolute; top: 10px; right: 12px; width: 28px; height: 28px; border: none; border-radius: 50%; background: transparent; color: #8a84a0; cursor: pointer; font-size: 14px; display: flex; align-items: center; justify-content: center; }
+    .tg-convite-fechar:hover { background: #f1eef8; color: #2b2540; }
+    .tg-convite button:focus-visible { outline: 3px solid #229ED9; outline-offset: 2px; }
+    .tg-instructions { border-left-color: #229ED9; background-color: #f1f9fe; }
+    .tg-instructions h3 { color: #229ED9; }
+    .print-mode .tg-convite { display: none !important; }
+    @keyframes tgSobe { from { opacity: 0; transform: translateY(24px) scale(0.97); } to { opacity: 1; transform: translateY(0) scale(1); } }
+    @media (max-width: 900px) { .tg-convite { bottom: 96px; padding: 16px 16px; gap: 12px; } .tg-convite-icone { width: 44px; height: 44px; font-size: 24px; } }
+
+/* ================= TabeLaLa — visual editorial (segue as cores do tema) ================= */
+:root{--ui-font:'Inter','Helvetica Neue',Arial,sans-serif;--ui-serif:'Cormorant Garamond',Georgia,serif;--ink:#1f1d24;--ui-muted:#86818c;--ui-soft:#f6f4f1;--ui-line:#e6e2dc;--ui-shadow:0 12px 40px rgba(31,29,36,.18);--head-h:64px;
+--hd-bg:var(--cor-cabecalho);--hd-fg:var(--cor-letras-cabecalho);--hd-soft:color-mix(in srgb,var(--cor-letras-cabecalho) 13%,transparent);--hd-line:color-mix(in srgb,var(--cor-letras-cabecalho) 26%,transparent)}
+body{background:var(--cor-fundo-pagina)}
+button,select,input,textarea{font-family:inherit}
+
+/* Seleção de texto visível em cabeçalhos */
+thead th::selection,thead th *::selection,.special-header td.col-first::selection,.special-header td.col-first *::selection{background:var(--cor-letras-cabecalho);color:var(--cor-cabecalho)}
+table.hm-col thead th:not(.col-first)::selection,table.hm-col thead th:not(.col-first) *::selection,table.hm-none thead th::selection,table.hm-none thead th *::selection{background:color-mix(in srgb,var(--cor-letras) 30%,transparent);color:inherit}
+td::selection,td *::selection{background:color-mix(in srgb,var(--cor-cabecalho) 55%,transparent)}
+
+/* Modos de cabeçalho */
+table.hm-col thead th:not(.col-first),table.hm-none thead th{background-color:transparent;color:var(--cor-letras);font-weight:400}
+
+/* Cabeçalho do site */
+.site-header{display:block;padding:0;background:var(--hd-bg);color:var(--hd-fg);border-bottom:1px solid var(--hd-line);box-shadow:0 2px 14px rgba(0,0,0,.12);z-index:40;font-family:var(--ui-font)}
+.appbar{min-height:64px;display:flex;align-items:center;gap:26px;padding:0 32px}
+.brand{display:flex;flex-direction:column;justify-content:center;min-width:0;line-height:1}
+.site-header h1{font-family:var(--ui-serif);font-size:1.9rem;font-weight:600;letter-spacing:.01em;margin:0;color:var(--hd-fg);text-align:left;line-height:1}
+.brand small{display:block;margin-top:4px;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--hd-fg);opacity:.72;font-weight:500;white-space:nowrap}
+.toolbar{display:flex;align-items:center;gap:2px;flex:1;min-width:0;overflow-x:auto;scrollbar-width:none}
+.toolbar::-webkit-scrollbar{display:none}
+.tb-btn{border:none;background:transparent;color:var(--hd-fg);opacity:.86;font:500 .85rem var(--ui-font);padding:10px 14px;cursor:pointer;display:flex;align-items:center;gap:8px;white-space:nowrap;flex-shrink:0;position:relative;border-radius:6px}
+.tb-btn::after{content:'';position:absolute;left:14px;right:14px;bottom:4px;height:1px;background:var(--hd-fg);transform:scaleX(0);transition:transform .2s}
+.tb-btn:hover,.tb-btn.open{opacity:1}
+.tb-btn:hover::after,.tb-btn.open::after{transform:scaleX(1)}
+.tb-btn .caret{font-size:.5rem;opacity:.6}
+.tb-switch i{font-size:1.15rem;opacity:.95}
+.appbar-right{display:flex;align-items:center;gap:6px;margin-left:auto}
+.hist-btns{display:flex;gap:2px;margin-right:6px}
+.hist-btns button,.icon-btn{border:none;background:transparent;color:var(--hd-fg);font:500 .82rem var(--ui-font);padding:0 10px;height:36px;border-radius:6px;cursor:pointer;display:flex;align-items:center;gap:7px}
+.hist-btns button:hover:not(:disabled),.icon-btn:hover{background:var(--hd-soft)}
+.hist-btns button:disabled{opacity:.35;cursor:default}
+.icon-btn{width:36px;justify-content:center;padding:0}
+.btn-ink{border:1px solid var(--hd-fg);background:var(--hd-fg);color:var(--hd-bg);font:600 .82rem var(--ui-font);letter-spacing:.02em;height:38px;padding:0 18px;border-radius:6px;cursor:pointer;display:flex;align-items:center;gap:8px;white-space:nowrap}
+.btn-ink:hover{filter:brightness(.92)}
+
+/* Painel lateral */
+.sidebar-container{top:var(--head-h);height:calc(100vh - var(--head-h));background:var(--hd-bg);border-right:1px solid var(--hd-line);box-shadow:none;padding:22px 22px 48px;--menu-text-label:var(--hd-fg);font-family:var(--ui-font);color:var(--hd-fg)}
+.btn-toggle-sidebar{background:var(--hd-soft);border:1px solid var(--hd-line);color:var(--hd-fg);box-shadow:none;border-radius:6px;font-weight:500;font-size:.8rem;padding:9px}
+.btn-toggle-sidebar:hover{background:var(--hd-soft);filter:brightness(1.1);transform:none}
+.section-title{color:var(--hd-fg);opacity:.8;font-size:.66rem;font-weight:600;letter-spacing:.18em;margin:30px 0 12px;padding:0 0 9px;border-bottom:1px solid var(--hd-line);display:block;text-transform:uppercase}
+.section-title.flash{opacity:1;border-bottom-color:var(--hd-fg)}
+.search-input{background:var(--hd-soft);border:1px solid var(--hd-line);box-shadow:none;border-radius:6px;padding:10px 12px;color:var(--hd-fg);font-size:.85rem}
+.search-input::placeholder{color:var(--hd-fg);opacity:.6}
+.search-input:focus{outline:none;border-color:var(--hd-fg)}
+.selection-mode-wrapper{background:var(--hd-soft);border:1px solid var(--hd-line);border-radius:6px;box-shadow:none}
+.selection-label,.control-group label,.checkbox-group{font-weight:500;font-size:.82rem;color:var(--hd-fg)}
+.btn-format{background:var(--hd-soft);box-shadow:none;border:1px solid var(--hd-line);color:var(--hd-fg);border-radius:6px;font-weight:500}
+.btn-format:hover{background:var(--hd-soft);filter:brightness(1.15);box-shadow:none;transform:none}
+.color-input-container{background:var(--hd-soft);border:1px solid var(--hd-line);box-shadow:none;border-radius:6px}
+.color-code{font-weight:500;color:var(--hd-fg)}
+.color-preview{border:1px solid var(--hd-line);box-shadow:none;border-radius:4px}
+select{background:var(--hd-soft);border:1px solid var(--hd-line);box-shadow:none;color:var(--hd-fg);border-radius:6px;font-weight:500;padding:9px}
+select option{background:#fff;color:#1f1d24}
+.theme-group{background:var(--hd-soft);border-radius:8px}
+.theme-group>summary{font-weight:600;font-size:.82rem;color:var(--hd-fg)}
+.theme-card{background:#fff;border:1px solid var(--ui-line);color:#1f1d24;box-shadow:none;border-radius:8px}
+.theme-card:hover,.theme-card:focus-visible{box-shadow:0 4px 14px rgba(0,0,0,.2);border-color:var(--hd-fg);transform:none}
+.mode-opt{background:var(--hd-soft);color:var(--hd-fg);border:1px solid var(--hd-line);border-radius:6px;font-weight:500}
+.mode-opt:hover{filter:brightness(1.12)}
+.btn-palette-gen{border-radius:6px;font-weight:600;box-shadow:none}
+.checkbox-group input[type="checkbox"]{border:1.5px solid var(--hd-fg);background:transparent;width:18px;height:18px;border-radius:4px}
+.checkbox-group input[type="checkbox"]:checked{background:var(--hd-fg);border-color:var(--hd-fg)}
+.checkbox-group input[type="checkbox"]:checked::after{color:var(--hd-bg);left:1.5px;top:-1px;font-size:11px}
+input[type=range]{accent-color:var(--hd-fg);width:100%}
+
+/* Área da tabela: o fundo da página ocupa tudo, exceto o menu */
+.content-area{padding:36px 32px 100px;background-color:var(--cor-fundo-pagina);background-image:none}
+.sheet{width:100%;max-width:1500px;min-width:0;background:transparent;border:none;border-radius:0;box-shadow:none;padding:24px 0 8px;display:flex;flex-direction:column;align-items:center}
+.table-wrapper{padding:50px 90px 30px;margin:0}
+.custom-title{margin:0 0 4px}
+.custom-title:hover,.custom-footer:hover{background:rgba(127,127,127,.07);border-radius:6px}
+.btn-show-sidebar{top:calc(var(--head-h) + 14px);background:var(--hd-fg);color:var(--hd-bg);box-shadow:0 6px 18px rgba(0,0,0,.25)}
+table{box-shadow:0 8px 28px rgba(0,0,0,.08)}
+th,td{padding:13px 18px;line-height:1.4}
+td:focus,th:focus{outline:2px solid var(--cor-letras-cabecalho);outline-offset:-3px;box-shadow:inset 0 0 0 4px color-mix(in srgb,var(--cor-cabecalho) 60%,transparent)}
+td:empty::after,th:empty::after{content:'\200b'}
+table.wrap-text td,table.wrap-text th{white-space:normal;overflow-wrap:anywhere;max-width:380px}
+table.fixed-layout{table-layout:fixed}
+table.fixed-layout td,table.fixed-layout th{min-width:0;max-width:none;overflow:hidden;text-overflow:ellipsis}
+table.fixed-layout.wrap-text td,table.fixed-layout.wrap-text th{text-overflow:clip}
+
+/* Barra de edição (abaixo da tabela) */
+.edit-dock{width:100%;max-width:1100px;margin:6px auto 0;display:flex;flex-wrap:wrap;justify-content:center;gap:18px 30px;padding:22px 10px 0;border-top:1px solid color-mix(in srgb,var(--cor-letras) 16%,transparent);font-family:var(--ui-font)}
+.edit-dock[hidden]{display:none}
+.dk-group{display:flex;flex-direction:column;align-items:center;gap:8px}
+.dk-label{font-size:.62rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--cor-letras);opacity:.65}
+.dk-row{display:flex;gap:6px;flex-wrap:wrap;justify-content:center}
+.dk-btn{display:inline-flex;align-items:center;gap:8px;border:1px solid color-mix(in srgb,var(--cor-letras-cabecalho) 22%,transparent);background:var(--cor-cabecalho);color:var(--cor-letras-cabecalho);font:500 .8rem var(--ui-font);padding:9px 14px;border-radius:6px;cursor:pointer;white-space:nowrap}
+.dk-btn:hover:not(:disabled){filter:brightness(1.08);transform:translateY(-1px)}
+.dk-btn:disabled{opacity:.4;cursor:default}
+.dk-btn.on{box-shadow:inset 0 0 0 2px var(--cor-letras-cabecalho);font-weight:700}
+.dk-btn i{font-size:.75rem}
+
+/* Ferramentas sobre a tabela */
+.grid-tools{position:absolute;left:0;top:0;width:0;height:0;overflow:visible;z-index:60}
+.hpill{position:absolute;pointer-events:auto;display:flex;align-items:center;gap:6px;height:24px;padding:0 10px;border-radius:4px;background:var(--hd-bg);color:var(--hd-fg);border:1px solid var(--hd-line);box-shadow:0 4px 12px rgba(0,0,0,.25);font:500 11.5px var(--ui-font);cursor:pointer;white-space:nowrap}
+.hpill i{font-size:11px;opacity:.8}
+.hpill:hover{background:var(--hd-fg);color:var(--hd-bg)}
+.resizer{position:absolute;pointer-events:auto;width:12px;cursor:col-resize;display:flex;align-items:center;justify-content:center;touch-action:none}
+.resizer::after{content:'';width:3px;height:60%;border-radius:2px;background:var(--hd-fg);box-shadow:0 0 0 1px var(--hd-bg);opacity:0;transition:opacity .15s}
+.resizer:hover::after,.resizer.drag::after{opacity:.9}
+.sel-box{position:absolute;pointer-events:none;border:2px solid var(--cor-letras);background:color-mix(in srgb,var(--cor-letras) 9%,transparent);border-radius:3px;box-shadow:0 0 0 1px rgba(255,255,255,.6)}
+.selbar{position:fixed;left:50%;bottom:26px;transform:translate(-50%,24px);opacity:0;pointer-events:none;z-index:1500;display:flex;align-items:center;gap:2px;flex-wrap:wrap;justify-content:center;background:var(--hd-bg);color:var(--hd-fg);border:1px solid var(--hd-line);padding:6px 6px 6px 16px;border-radius:8px;box-shadow:var(--ui-shadow);font-family:var(--ui-font);max-width:calc(100vw - 16px);transition:opacity .2s,transform .2s}
+.selbar.show{opacity:1;transform:translate(-50%,0);pointer-events:auto}
+.sel-label{font-family:var(--ui-serif);font-weight:600;font-size:1.05rem;margin-right:10px;white-space:nowrap}
+.selbar button,.sb-color{border:none;background:transparent;color:var(--hd-fg);font:500 .78rem var(--ui-font);padding:8px 11px;border-radius:5px;cursor:pointer;display:flex;align-items:center;gap:7px;position:relative;white-space:nowrap}
+.selbar button:hover,.sb-color:hover{background:var(--hd-soft)}
+.selbar .sb-del:hover{background:#b3402f;color:#fff}
+.sb-color input{position:absolute;inset:0;opacity:0;width:100%;height:100%;cursor:pointer}
+.sb-sep{width:1px;height:18px;background:var(--hd-line);margin:0 4px}
+.sb-grp{font-size:.74rem;font-weight:500;opacity:.7;margin:0 2px 0 6px}
+
+/* Menus suspensos */
+.menu-panel{position:fixed;display:none;z-index:1800;min-width:240px;max-width:calc(100vw - 16px);background:var(--hd-bg);color:var(--hd-fg);border:1px solid var(--hd-line);border-radius:8px;box-shadow:var(--ui-shadow);padding:6px;font-family:var(--ui-font);animation:tbpop .14s ease-out}
+.menu-panel.show{display:block}
+@keyframes tbpop{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+.mi{display:flex;align-items:center;gap:12px;width:100%;padding:9px 12px;border:none;background:transparent;border-radius:5px;font:500 .84rem var(--ui-font);color:var(--hd-fg);cursor:pointer;text-align:left}
+.mi i{width:16px;text-align:center;font-size:.8rem;opacity:.75}
+.mi:hover{background:var(--hd-soft)}
+.mi-danger{color:var(--hd-fg)}
+.mi-sep{height:1px;background:var(--hd-line);margin:6px 2px}
+.mi-pair{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:2px}
+.mi-card{border:1px solid var(--hd-line);background:var(--hd-soft);border-radius:6px;padding:13px;text-align:left;cursor:pointer;font-family:var(--ui-font);color:var(--hd-fg);display:flex;flex-direction:column;gap:5px}
+.mi-card b{font-size:.82rem;font-weight:600;display:flex;align-items:center;gap:8px}
+.mi-card small{font-size:.72rem;opacity:.78;line-height:1.4;font-weight:400}
+.mi-card:hover{border-color:var(--hd-fg)}
+.mi-note{font-size:.72rem;opacity:.78;padding:10px 10px 4px;line-height:1.5;display:flex;gap:8px}
+#menuArquivo{min-width:340px}
+
+/* Modais (neutros) */
+.modal{background:rgba(20,18,26,.55);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px)}
+.modal-content{border-radius:12px;box-shadow:var(--ui-shadow)}
+.modal h2{font-family:var(--ui-serif);font-weight:600;font-size:1.7rem;color:var(--ink)}
+.modal-btn{border-radius:6px;padding:11px 22px;font-weight:500}
+.modal-btn-secondary{background:#fff;color:var(--ink);border:1px solid var(--ui-line)}
+.clear-box{max-width:440px;text-align:left;font-family:var(--ui-font);color:var(--ink)}
+.clear-box h2{margin:0 0 6px}
+.clear-q{font-weight:500;margin:0 0 14px;color:#4a4752}
+.chk-row{display:flex;align-items:center;gap:12px;padding:12px 14px;border:1px solid var(--ui-line);border-radius:6px;margin-bottom:8px;cursor:pointer;font-weight:500;font-size:.88rem}
+.chk-row:hover{background:var(--ui-soft)}
+.chk-row input{width:17px;height:17px;accent-color:var(--cor-cabecalho);margin:0}
+.clear-hint{font-size:.76rem;color:var(--ui-muted);line-height:1.5;margin:14px 0 0}
+.btn-ink-m{background:var(--cor-cabecalho);color:var(--cor-letras-cabecalho);border:1px solid var(--cor-cabecalho)}
+
+/* Hora do Print */
+.studio{background:#fff;border-radius:12px;max-width:1060px;width:100%;display:grid;grid-template-columns:350px 1fr;max-height:92vh;overflow:hidden;box-shadow:var(--ui-shadow);font-family:var(--ui-font);color:var(--ink)}
+.studio h2{margin:0 0 2px}
+.studio-sub{margin:0 0 10px;color:var(--ui-muted);font-size:.8rem}
+.studio-opts{padding:28px;overflow-y:auto;border-right:1px solid var(--ui-line)}
+.opt-title{display:block;font-weight:600;font-size:.64rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ui-muted);margin:20px 0 9px}
+.seg{display:flex;flex-wrap:wrap;gap:6px}
+.seg label{cursor:pointer}
+.seg input{display:none}
+.seg span{display:block;padding:8px 13px;border-radius:5px;border:1px solid var(--ui-line);background:#fff;font-weight:500;font-size:.8rem}
+.seg span:hover{border-color:#b9b4be}
+.seg input:checked+span{background:var(--cor-cabecalho);color:var(--cor-letras-cabecalho);border-color:var(--cor-cabecalho)}
+.custom-size{display:flex;align-items:center;gap:8px;margin-top:10px;font-weight:500;font-size:.85rem}
+.custom-size input{width:92px;padding:8px;border:1px solid var(--ui-line);border-radius:5px;color:var(--ink);font-weight:500}
+.scale-row{display:flex;align-items:center;gap:10px;font-weight:500;font-size:.76rem;color:#4a4752}
+.scale-row input[type=range]{accent-color:var(--cor-cabecalho)}
+.scale-out{min-width:40px;text-align:right;color:var(--ink);font-weight:600}
+.studio-btns{display:flex;flex-direction:column;gap:8px;margin-top:26px}
+.studio-btns button{border-radius:6px;padding:12px;font:500 .84rem var(--ui-font);cursor:pointer;background:#fff;color:var(--ink);border:1px solid var(--ui-line);display:flex;align-items:center;justify-content:center;gap:9px}
+.studio-btns button:hover{border-color:var(--ink)}
+.studio-btns .sb-main{background:var(--cor-cabecalho);color:var(--cor-letras-cabecalho);border-color:var(--cor-cabecalho)}
+.studio-btns .sb-main:hover{filter:brightness(.94)}
+.studio-preview{background:#ece9e4;padding:26px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;min-height:320px;overflow:auto}
+.checker{background:repeating-conic-gradient(#dcd8d2 0 25%,#f2f0ed 0 50%) 0 0/16px 16px;border-radius:3px;box-shadow:0 10px 30px rgba(0,0,0,.2);line-height:0}
+.checker img{max-width:100%;max-height:60vh;display:block;border-radius:3px}
+.st-meta{font-size:.74rem;letter-spacing:.04em;color:var(--ui-muted);font-weight:500;text-align:center;max-width:420px;line-height:1.5}
+
+.toast{position:fixed;left:50%;bottom:96px;transform:translate(-50%,16px);background:var(--ink);color:#fff;padding:11px 20px;border-radius:6px;font:500 .82rem var(--ui-font);opacity:0;pointer-events:none;z-index:3000;transition:opacity .25s,transform .25s;max-width:calc(100vw - 24px);text-align:center}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+.print-mode .appbar,.print-mode .selbar,.print-mode .grid-tools,.print-mode .menu-panel,.print-mode .edit-dock{display:none!important}
+
+@media (max-width:900px){
+  :root{--head-h:104px}
+  .appbar{flex-wrap:wrap;gap:0 10px;padding:8px 14px 0}
+  .brand small,.hist-btns button span{display:none}
+  .site-header h1{font-size:1.6rem}
+  .toolbar{order:3;flex:0 0 100%;margin:0 -6px}
+  .btn-ink span{display:none}
+  .sidebar-container{top:0;height:auto;max-height:60vh;width:100%}
+  .content-area{padding:14px 8px 90px}
+  .sheet{padding:16px 0 8px}
+  .table-wrapper{padding:44px 14px 24px 62px}
+  .hlabel{display:none}
+  .studio{grid-template-columns:1fr;overflow-y:auto}
+  .studio-opts{border-right:none}
+  #menuArquivo{min-width:0}
+}
+
+/* ===== Ajustes: cabeçalho centralizado, paleta, Hora do Print, Telegram em tela cheia, altura de linha ===== */
+@media (min-width:901px){
+  .appbar{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:26px}
+  .toolbar{order:1;flex:none;min-width:0}
+  .brand{order:2;justify-self:center;flex-direction:row;align-items:center;gap:14px;white-space:nowrap}
+  .appbar-right{order:3;justify-self:end;margin-left:0}
+}
+.brand small{margin:0;display:flex;align-items:center;font-size:.7rem}
+.brand small::before{content:'\25CF';font-size:.5rem;margin-right:14px;opacity:.85}
+@media (min-width:901px) and (max-width:1200px){ .hist-btns button span{display:none} }
+
+/* Botões Claro/Escuro da paleta: sempre com contraste */
+.mode-opt:hover{background:color-mix(in srgb,var(--hd-fg) 24%,transparent);filter:none}
+#paletteDark:not(:checked) ~ .mode-light,#paletteDark:checked ~ .mode-dark{background:var(--hd-fg);color:var(--hd-bg);border-color:var(--hd-fg);box-shadow:0 3px 8px rgba(0,0,0,.25);font-weight:700}
+#paletteDark:not(:checked) ~ .mode-light:hover,#paletteDark:checked ~ .mode-dark:hover{background:var(--hd-fg);color:var(--hd-bg);filter:brightness(.94)}
+
+/* Pop-ups: a rolagem fica dentro da janela e não passa para a tabela do fundo */
+html.modal-open,body.modal-open{overflow:hidden}
+.modal,.modal-content,.studio-opts,.studio-preview{overscroll-behavior:contain}
+.studio{grid-template-rows:minmax(0,1fr);max-height:calc(100vh - 40px)}
+.studio-opts,.studio-preview{min-height:0}
+@media (max-width:900px){ .studio{grid-template-rows:none} }
+
+/* Convite do Telegram em tela cheia */
+.tg-convite{top:0;right:0;bottom:0;left:0;width:100%;height:100%;margin:0;border-radius:0;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:26px;padding:32px 24px;z-index:2600;overflow-y:auto;overscroll-behavior:contain;color:#fff;background:radial-gradient(circle at 50% 0%,#37b6ee 0%,#229ED9 38%,#0f5f8c 100%);box-shadow:none;animation:tgFade .45s ease both}
+.tg-convite-icone{width:128px;height:128px;font-size:72px;background:rgba(255,255,255,.18);box-shadow:0 0 0 14px rgba(255,255,255,.08),0 18px 40px rgba(0,0,0,.25)}
+.tg-convite-corpo{flex:none;display:flex;flex-direction:column;align-items:center;gap:18px;max-width:640px}
+.tg-convite-texto{margin:0;padding:0;font-size:clamp(1.4rem,3.6vw,2.4rem);line-height:1.3;font-weight:700}
+.tg-convite-botao{background-color:#fff;background-image:none;color:#1578a8;font-size:1.15rem;padding:16px 34px;border-radius:14px;box-shadow:0 10px 26px rgba(0,0,0,.28)}
+.tg-convite-botao:hover{filter:none;background-color:#f1f8fc;box-shadow:0 14px 32px rgba(0,0,0,.34)}
+.tg-convite-depois{border:none;background:transparent;color:rgba(255,255,255,.88);font:600 .95rem inherit;font-family:inherit;cursor:pointer;padding:10px 18px;border-radius:10px;text-decoration:underline;text-underline-offset:4px}
+.tg-convite-depois:hover{background:rgba(255,255,255,.14)}
+.tg-convite-fechar{top:18px;right:20px;width:44px;height:44px;font-size:22px;color:#fff;background:rgba(255,255,255,.16)}
+.tg-convite-fechar:hover{background:rgba(255,255,255,.3);color:#fff}
+.tg-convite button:focus-visible{outline-color:#fff}
+@keyframes tgFade{from{opacity:0}to{opacity:1}}
+@media (max-width:900px){ .tg-convite{bottom:0;padding:32px 20px;gap:22px} .tg-convite-icone{width:104px;height:104px;font-size:58px} }
+
+/* Altura das linhas */
+.rresizer{position:absolute;pointer-events:auto;height:12px;cursor:row-resize;display:flex;align-items:center;justify-content:center;touch-action:none}
+.rresizer::after{content:'';height:3px;width:70%;border-radius:2px;background:var(--hd-fg);box-shadow:0 0 0 1px var(--hd-bg);opacity:0;transition:opacity .15s}
+.rresizer.near::after{opacity:.4}
+.rresizer:hover::after,.rresizer.drag::after{opacity:.95}
 </style>
 </head>
 <body>
 <header class="site-header">
-    <h1>TabeLaLa - Monte sua tabela com @studies_lala</h1>
+    <div class="appbar">
+        <div class="brand">
+            <h1>TabeLaLa</h1>
+            <small>@enaLaLaPril</small>
+        </div>
+        <nav class="toolbar">
+            <button class="tb-btn tb-switch" id="editToggle" aria-pressed="true" onclick="toggleEditDock()" title="Mostrar ou ocultar os botões de edição abaixo da tabela">Editar <i class="fas fa-toggle-on"></i></button>
+            <button class="tb-btn" data-menu="menuAparencia" onclick="toggleMenu(this,'menuAparencia')">Aparência <i class="fas fa-chevron-down caret"></i></button>
+            <button class="tb-btn" data-menu="menuArquivo" onclick="toggleMenu(this,'menuArquivo')">Arquivo <i class="fas fa-chevron-down caret"></i></button>
+            <button class="tb-btn" data-menu="menuCompartilhar" onclick="toggleMenu(this,'menuCompartilhar')">Compartilhar <i class="fas fa-chevron-down caret"></i></button>
+        </nav>
+        <div class="appbar-right">
+            <div class="hist-btns">
+                <button id="btnUndo" onclick="undoAction()" disabled title="Desfazer (Ctrl+Z)"><i class="fas fa-rotate-left"></i><span>Desfazer</span></button>
+                <button id="btnRedo" onclick="redoAction()" disabled title="Refazer (Ctrl+Y)"><i class="fas fa-rotate-right"></i><span>Refazer</span></button>
+            </div>
+            <button class="icon-btn" onclick="openRecadoModal()" title="Recado"><i class="far fa-heart"></i></button>
+            <button class="btn-ink" onclick="openPrintStudio()"><i class="far fa-image"></i><span>Hora do Print</span></button>
+        </div>
+    </div>
 </header>
 
 <div class="main-layout">
@@ -453,8 +959,10 @@
             <button class="btn-format" onclick="formatSelection('bold')" title="Negrito"><b>B</b></button>
             <button class="btn-format" onclick="formatSelection('italic')" title="Itálico"><i>I</i></button>
             <button class="btn-format" onclick="formatSelection('underline')" title="Sublinhado"><u>U</u></button>
-            <button class="btn-format" onclick="formatSelection('hiliteColor', document.getElementById('highlightColor').value)" title="Grifar">🖍️</button>
+            <button class="btn-format" onclick="formatSelection('hiliteColor', document.getElementById('highlightColor').value)" title="Grifar"><i class="fas fa-highlighter"></i></button>
             <input type="color" id="highlightColor" value="#ffff00" style="width:30px; height:24px; padding:0; border:none;">
+            <button class="btn-format" onclick="applyTextColor(document.getElementById('textColorPick').value)" title="Cor do texto selecionado"><i class="fas fa-font"></i></button>
+            <input type="color" id="textColorPick" value="#d6336c" oninput="applyTextColor(this.value)" title="Escolher a cor do texto" style="width:30px; height:24px; padding:0; border:none;">
         </div>
         <div class="format-toolbar">
             <button class="btn-format" onclick="formatSelection('justifyLeft')" title="Esquerda"><i class="fas fa-align-left"></i></button>
@@ -463,7 +971,7 @@
             <button class="btn-format" onclick="formatSelection('justifyFull')" title="Justificado"><i class="fas fa-align-justify"></i></button>
         </div>
 
-        <div class="section-title">Bordas da Tabela</div>
+        <div class="section-title" id="sec-bordas">Bordas da Tabela</div>
         <div class="control-group">
             <label>Estilo da Borda</label>
             <select id="borderStyle" onchange="updateBorders()">
@@ -482,7 +990,7 @@
             <input type="range" id="borderWeight" min="0" max="10" step="1" value="1" oninput="updateBorders()">
         </div>
 
-        <div class="section-title">Efeitos e Extras</div>
+        <div class="section-title" id="sec-efeitos">Efeitos e Extras</div>
         <label class="checkbox-group">
             <input type="checkbox" id="neonTable" onchange="toggleNeon('table')">
             <span>Efeito Neon Tabela</span>
@@ -499,54 +1007,51 @@
         <div class="section-title">Paleta Harmônica Automática</div>
         <div class="control-group">
             <label>Cor base da paleta</label>
-            <input type="color" id="basePaletteColor" value="#9370DB" style="width:100%; height:40px; cursor:pointer; border:1px solid #ddd; border-radius:4px;">
+            <input type="color" id="basePaletteColor" value="#9370DB" oninput="updatePalettePreview()" style="width:100%; height:40px; cursor:pointer; border:1px solid #ddd; border-radius:4px;">
+        </div>
+        <div class="control-group">
+            <label>Fundo da paleta</label>
+            <div class="mode-toggle">
+                <input type="checkbox" id="paletteDark" checked>
+                <button type="button" class="mode-opt mode-light" onclick="setPaletteMode(false)"><i class="fas fa-sun"></i> Claro</button>
+                <button type="button" class="mode-opt mode-dark" onclick="setPaletteMode(true)"><i class="fas fa-moon"></i> Escuro</button>
+            </div>
+            <div class="palette-preview" id="palettePreview"></div>
             <button class="btn-palette-gen" onclick="generateHarmonicPalette()">Gerar paleta automática</button>
         </div>
 
-        <div class="section-title">Temas Prontos</div>
-        <div class="presets-grid">
-            <button class="preset-btn" onclick="applyPreset('doceLavanda')"><i class="fas fa-heart"></i> LaLa</button>
-            <button class="preset-btn" onclick="applyPreset('florestaEncantada')"><i class="fas fa-atom"></i> Marie Curie</button>
-            <button class="preset-btn" onclick="applyPreset('cadernoClassico')"><i class="fas fa-ankh"></i> Cleópatra</button>
-            <button class="preset-btn" onclick="applyPreset('brisaDoMar')"><i class="fas fa-book-reader"></i> Carolina M. Jesus</button>
-            <button class="preset-btn" onclick="applyPreset('cinzaMinimalista')"><i class="fas fa-laptop-code"></i> Ada Lovelace</button>
-            <button class="preset-btn" onclick="applyPreset('ceuEstrelado')"><i class="fas fa-graduation-cap"></i> Anna J. Cooper</button>
-            <button class="preset-btn" onclick="applyPreset('jardimSecreto')"><i class="fas fa-shoe-prints"></i> Ana Botafogo</button>
-            <button class="preset-btn" onclick="applyPreset('oceanoProfundo')"><i class="fas fa-pen-nib"></i> C. Lispector</button>
-            <button class="preset-btn" onclick="applyPreset('terracotaSol')"><i class="fas fa-brain"></i> Nise da Silveira</button>
-            <button class="preset-btn" onclick="applyPreset('grafiteAmarelo')"><i class="fas fa-bus"></i> Rosa Parks</button>
-            <button class="preset-btn" onclick="applyPreset('rosaCereja')"><i class="fas fa-book"></i> Malala Y.</button>
-            <button class="preset-btn" onclick="applyPreset('docePastel')"><i class="fas fa-venus-mars"></i> C. Jorgensen</button>
-            <button class="preset-btn" onclick="applyPreset('mentaSuave')"><i class="fas fa-feather-alt"></i> Jane Austen</button>
-        </div>
+        <div class="section-title" id="sec-temas">Temas Prontos</div>
+        <div id="presetGallery"></div>
 
-        <div class="section-title">Configurações de Cores</div>
-        <div class="control-group"><label>Fundo da Página</label><div class="color-input-container" onclick="document.getElementById('bgPage').click()"><i class="fas fa-palette color-picker-icon"></i><div class="color-display"><span class="color-code" id="bgPageCode">#F5EBFF</span><div class="color-preview" id="bgPagePreview" style="background-color: #F5EBFF"></div></div><input type="color" id="bgPage" value="#F5EBFF" onchange="updateColorDisplay(this)" class="color-input"></div></div>
-        <div class="control-group"><label>Fundo das Células</label><div class="color-input-container" onclick="document.getElementById('bgCells').click()"><i class="fas fa-palette color-picker-icon"></i><div class="color-display"><span class="color-code" id="bgCellsCode">#F8F2FF</span><div class="color-preview" id="bgCellsPreview" style="background-color: #F8F2FF"></div></div><input type="color" id="bgCells" value="#F8F2FF" onchange="updateColorDisplay(this)" class="color-input"></div></div>
-        <div class="control-group"><label>Cor das Divisórias</label><div class="color-input-container" onclick="document.getElementById('borderColor').click()"><i class="fas fa-palette color-picker-icon"></i><div class="color-display"><span class="color-code" id="borderColorCode">#4B0082</span><div class="color-preview" id="borderColorPreview" style="background-color: #4B0082"></div></div><input type="color" id="borderColor" value="#4B0082" onchange="updateColorDisplay(this)" class="color-input"></div></div>
-        <div class="control-group"><label>Cor das Letras</label><div class="color-input-container" onclick="document.getElementById('textColor').click()"><i class="fas fa-palette color-picker-icon"></i><div class="color-display"><span class="color-code" id="textColorCode">#4A2568</span><div class="color-preview" id="textColorPreview" style="background-color: #4A2568"></div></div><input type="color" id="textColor" value="#4A2568" onchange="updateColorDisplay(this)" class="color-input"></div></div>
-        <div class="control-group"><label>Cor do Título</label><div class="color-input-container" onclick="document.getElementById('titleColor').click()"><i class="fas fa-palette color-picker-icon"></i><div class="color-display"><span class="color-code" id="titleColorCode">#4A2568</span><div class="color-preview" id="titleColorPreview" style="background-color: #4A2568"></div></div><input type="color" id="titleColor" value="#4A2568" onchange="updateColorDisplay(this)" class="color-input"></div></div>
-        <div class="control-group"><label>Cor da Assinatura</label><div class="color-input-container" onclick="document.getElementById('footerColor').click()"><i class="fas fa-palette color-picker-icon"></i><div class="color-display"><span class="color-code" id="footerColorCode">#9370DB</span><div class="color-preview" id="footerColorPreview" style="background-color: #9370DB"></div></div><input type="color" id="footerColor" value="#9370DB" onchange="updateColorDisplay(this)" class="color-input"></div></div>
+        <div class="section-title" id="sec-cores">Configurações de Cores</div>
+        <div class="control-group"><label>Fundo da Página</label><div class="color-input-container" onclick="document.getElementById('bgPage').click()"><i class="fas fa-palette color-picker-icon"></i><div class="color-display"><span class="color-code" id="bgPageCode">#130A24</span><div class="color-preview" id="bgPagePreview" style="background-color: #130A24"></div></div><input type="color" id="bgPage" value="#130A24" onchange="updateColorDisplay(this)" class="color-input"></div></div>
+        <div class="control-group"><label>Fundo das Células</label><div class="color-input-container" onclick="document.getElementById('bgCells').click()"><i class="fas fa-palette color-picker-icon"></i><div class="color-display"><span class="color-code" id="bgCellsCode">#1D1037</span><div class="color-preview" id="bgCellsPreview" style="background-color: #1D1037"></div></div><input type="color" id="bgCells" value="#1D1037" onchange="updateColorDisplay(this)" class="color-input"></div></div>
+        <div class="control-group"><label>Cor das Divisórias</label><div class="color-input-container" onclick="document.getElementById('borderColor').click()"><i class="fas fa-palette color-picker-icon"></i><div class="color-display"><span class="color-code" id="borderColorCode">#8059CF</span><div class="color-preview" id="borderColorPreview" style="background-color: #8059CF"></div></div><input type="color" id="borderColor" value="#8059CF" onchange="updateColorDisplay(this)" class="color-input"></div></div>
+        <div class="control-group"><label>Cor das Letras</label><div class="color-input-container" onclick="document.getElementById('textColor').click()"><i class="fas fa-palette color-picker-icon"></i><div class="color-display"><span class="color-code" id="textColorCode">#E3DEED</span><div class="color-preview" id="textColorPreview" style="background-color: #E3DEED"></div></div><input type="color" id="textColor" value="#E3DEED" onchange="updateColorDisplay(this)" class="color-input"></div></div>
+        <div class="control-group"><label>Cor do Título</label><div class="color-input-container" onclick="document.getElementById('titleColor').click()"><i class="fas fa-palette color-picker-icon"></i><div class="color-display"><span class="color-code" id="titleColorCode">#A98DE2</span><div class="color-preview" id="titleColorPreview" style="background-color: #A98DE2"></div></div><input type="color" id="titleColor" value="#A98DE2" onchange="updateColorDisplay(this)" class="color-input"></div></div>
+        <div class="control-group"><label>Cor da Assinatura</label><div class="color-input-container" onclick="document.getElementById('footerColor').click()"><i class="fas fa-palette color-picker-icon"></i><div class="color-display"><span class="color-code" id="footerColorCode">#A98DE2</span><div class="color-preview" id="footerColorPreview" style="background-color: #A98DE2"></div></div><input type="color" id="footerColor" value="#A98DE2" onchange="updateColorDisplay(this)" class="color-input"></div></div>
         <div class="control-group"><label>Cor do Cabeçalho</label><div class="color-input-container" onclick="document.getElementById('headerBgColor').click()"><i class="fas fa-palette color-picker-icon"></i><div class="color-display"><span class="color-code" id="headerBgColorCode">#9370DB</span><div class="color-preview" id="headerBgColorPreview" style="background-color: #9370DB"></div></div><input type="color" id="headerBgColor" value="#9370DB" onchange="updateColorDisplay(this)" class="color-input"></div></div>
-        <div class="control-group"><label>Texto do Cabeçalho</label><div class="color-input-container" onclick="document.getElementById('headerTextColor').click()"><i class="fas fa-palette color-picker-icon"></i><div class="color-display"><span class="color-code" id="headerTextColorCode">#FFFFFF</span><div class="color-preview" id="headerTextColorPreview" style="background-color: #FFFFFF"></div></div><input type="color" id="headerTextColor" value="#FFFFFF" onchange="updateColorDisplay(this)" class="color-input"></div></div>
+        <div class="control-group"><label>Texto do Cabeçalho</label><div class="color-input-container" onclick="document.getElementById('headerTextColor').click()"><i class="fas fa-palette color-picker-icon"></i><div class="color-display"><span class="color-code" id="headerTextColorCode">#140A29</span><div class="color-preview" id="headerTextColorPreview" style="background-color: #140A29"></div></div><input type="color" id="headerTextColor" value="#140A29" onchange="updateColorDisplay(this)" class="color-input"></div></div>
 
-        <div class="section-title">Estilo e Fonte</div>
+        <div class="section-title" id="sec-fontes">Estilo e Fonte</div>
         <div class="control-group"><select id="fontFamily" onchange="applyStyles()"><option value="'Comic Neue', cursive" selected>Comic Neue</option><option value="'Indie Flower', cursive">Indie Flower</option><option value="'Pacifico', cursive">Pacifico</option><option value="'Quicksand', sans-serif">Quicksand</option><option value="'Dancing Script', cursive">Dancing Script</option><option value="'Architects Daughter', cursive">Architects Daughter</option><option value="'Shadows Into Light', cursive">Shadows Into Light</option><option value="Arial, sans-serif">Arial</option><option value="Georgia, serif">Georgia</option><option value="Verdana, sans-serif">Verdana</option><option value="'Trebuchet MS', sans-serif">Trebuchet MS</option><option value="'Courier New', monospace">Courier New</option></select></div>
         <label class="checkbox-group"><input type="checkbox" id="hasTitle" checked onchange="toggleTitle()"><span>Mostrar Título</span></label>
         <label class="checkbox-group"><input type="checkbox" id="hasFooter" checked onchange="toggleFooter()"><span>Mostrar Assinatura</span></label>
         <label class="checkbox-group"><input type="checkbox" id="stripedRows" checked onchange="toggleStripedOptions()"><span>Tons Intercalados</span></label>
         
         <div id="stripedColorGroup" style="display: none; margin-top: 10px;">
-            <div class="control-group"><div class="color-input-container" onclick="document.getElementById('stripedColor').click()"><i class="fas fa-palette color-picker-icon"></i><div class="color-display"><span class="color-code" id="stripedColorCode">#e6d6ff</span><div class="color-preview" id="stripedColorPreview" style="background-color: #e6d6ff"></div></div><input type="color" id="stripedColor" value="#e6d6ff" onchange="updateColorDisplay(this)" class="color-input"></div></div>
+            <div class="control-group"><div class="color-input-container" onclick="document.getElementById('stripedColor').click()"><i class="fas fa-palette color-picker-icon"></i><div class="color-display"><span class="color-code" id="stripedColorCode">#29174F</span><div class="color-preview" id="stripedColorPreview" style="background-color: #29174F"></div></div><input type="color" id="stripedColor" value="#29174F" onchange="updateColorDisplay(this)" class="color-input"></div></div>
         </div>
     </div>
 
     <div class="content-area">
         <button id="showMenuBtn" class="btn-show-sidebar" onclick="toggleSidebar()" title="Mostrar Menu"><i class="fas fa-bars"></i></button>
 
+        <div class="sheet">
         <div id="customTitle" class="custom-title" contenteditable="true" spellcheck="false" onpaste="pasteTextOnly(event)">Sua Tabela</div>
         
         <div class="table-wrapper" id="tableWrapper">
+            <div id="gridTools" class="grid-tools"></div>
             <table id="editableTable" class="special-header striped-rows">
                 <thead>
                     <tr>
@@ -591,19 +1096,143 @@
             </div>
         </div>
 
-        <div id="customFooter" class="custom-footer" contenteditable="true" spellcheck="false" onpaste="pasteTextOnly(event)">@studies_lala</div>
+        <div id="customFooter" class="custom-footer" contenteditable="true" spellcheck="false" onpaste="pasteTextOnly(event)">@enaLaLaPril</div>
+        </div>
+        <div class="edit-dock" id="editDock">
+    <input type="hidden" id="headerMode" value="both">
+    <input type="checkbox" id="wrapText" hidden>
+    <div class="dk-group"><span class="dk-label">Linhas</span><div class="dk-row">
+        <button class="dk-btn" onclick="addRow()"><i class="fas fa-plus"></i>Adicionar</button>
+        <button class="dk-btn" onclick="removeRow()"><i class="fas fa-minus"></i>Remover</button>
+    </div></div>
+    <div class="dk-group"><span class="dk-label">Colunas</span><div class="dk-row">
+        <button class="dk-btn" onclick="addColumn()"><i class="fas fa-plus"></i>Adicionar</button>
+        <button class="dk-btn" onclick="removeColumn()"><i class="fas fa-minus"></i>Remover</button>
+    </div></div>
+    <div class="dk-group"><span class="dk-label">Histórico</span><div class="dk-row">
+        <button class="dk-btn" id="dkUndo" onclick="undoAction()"><i class="fas fa-rotate-left"></i>Desfazer</button>
+        <button class="dk-btn" id="dkRedo" onclick="redoAction()"><i class="fas fa-rotate-right"></i>Refazer</button>
+    </div></div>
+    <div class="dk-group"><span class="dk-label">Cabeçalho</span><div class="dk-row" id="hmRow">
+        <button class="dk-btn on" data-hm="both" onclick="setHeaderMode('both',true)" title="Padrão: 1ª linha e 1ª coluna">Linha e coluna</button>
+        <button class="dk-btn" data-hm="row" onclick="setHeaderMode('row',true)" title="Somente a 1ª linha">Só 1ª linha</button>
+        <button class="dk-btn" data-hm="col" onclick="setHeaderMode('col',true)" title="Somente a 1ª coluna">Só 1ª coluna</button>
+        <button class="dk-btn" data-hm="none" onclick="setHeaderMode('none',true)" title="Tabela sem cabeçalho">Sem cabeçalho</button>
+    </div></div>
+    <div class="dk-group"><span class="dk-label">Conteúdo</span><div class="dk-row">
+        <button class="dk-btn" onclick="openClearModal()"><i class="fas fa-eraser"></i>Limpar conteúdo</button>
+        <button class="dk-btn" onclick="autoWidths()"><i class="fas fa-arrows-left-right"></i>Ajustar largura</button>
+        <button class="dk-btn" onclick="autoHeights()" title="Volta todas as linhas à altura automática"><i class="fas fa-arrows-up-down"></i>Ajustar altura</button>
+        <button class="dk-btn" id="wrapBtn" onclick="toggleWrap()"><i class="fas fa-arrow-turn-down"></i>Quebrar texto</button>
+    </div></div>
+</div>
+    </div>
+</div>
 
-        <div class="actions-panel">
-            <button class="btn-action" onclick="addRow()"><i class="fas fa-plus"></i> Adicionar Linha</button>
-            <button class="btn-action" onclick="addColumn()"><i class="fas fa-plus"></i> Adicionar Coluna</button>
-            <button class="btn-action" onclick="removeRow()"><i class="fas fa-minus"></i> Remover Linha</button>
-            <button class="btn-action" onclick="removeColumn()"><i class="fas fa-minus"></i> Remover Coluna</button>
-            <button class="btn-action btn-undo" onclick="undoMerge()"><i class="fas fa-undo"></i> Desfazer Mescla</button>
-            <button class="btn-action btn-print" onclick="togglePrintMode()"><i class="fas fa-camera"></i> Hora do Print</button>
-            <button class="btn-action btn-share" onclick="openShareModal()"><i class="fab fa-twitter"></i> Compartilhar no X</button>
-            <button class="btn-action btn-pdf" onclick="exportPDF()"><i class="fas fa-file-pdf"></i> Salvar PDF</button>
-            <button class="btn-action btn-recado" onclick="openRecadoModal()"><i class="fas fa-heart"></i> Recado</button>
-            <button class="btn-action btn-reset" onclick="resetToDefault()"><i class="fas fa-sync-alt"></i> Restaurar Padrão</button>
+<div class="menu-panel" id="menuAparencia">
+    <button class="mi" onclick="goToSection('sec-temas')"><i class="fas fa-swatchbook"></i>Temas</button>
+    <button class="mi" onclick="goToSection('sec-cores')"><i class="fas fa-droplet"></i>Cores</button>
+    <button class="mi" onclick="goToSection('sec-fontes')"><i class="fas fa-font"></i>Fontes</button>
+    <button class="mi" onclick="goToSection('sec-bordas')"><i class="fas fa-border-all"></i>Bordas</button>
+    <button class="mi" onclick="goToSection('sec-efeitos')"><i class="fas fa-wand-magic-sparkles"></i>Efeitos</button>
+</div>
+
+<div class="menu-panel" id="menuArquivo">
+    <div class="mi-pair">
+        <button class="mi-card" onclick="saveToRecent()"><b><i class="far fa-floppy-disk"></i>Salvar neste dispositivo</b><small>Salva a tabela apenas neste navegador.</small></button>
+        <button class="mi-card" onclick="exportFile()"><b><i class="fas fa-file-arrow-down"></i>Exportar arquivo</b><small>Baixa um arquivo para guardar ou enviar.</small></button>
+    </div>
+    <div class="mi-note"><i class="fas fa-circle-info"></i><span>Salvar neste dispositivo não é salvar na nuvem: o TabeLaLa não tem banco de dados. Para ter um backup de verdade, exporte o arquivo.</span></div>
+    <div class="mi-sep"></div>
+    <button class="mi" onclick="document.getElementById('importInput').click()"><i class="fas fa-file-arrow-up"></i>Importar arquivo</button>
+    <button class="mi" onclick="openRecentModal()"><i class="fas fa-clock-rotate-left"></i>Tabelas recentes</button>
+    <div class="mi-sep"></div>
+    <button class="mi mi-danger" onclick="resetToDefault()"><i class="fas fa-rotate"></i>Restaurar padrão</button>
+</div>
+<input type="file" id="importInput" accept=".json,application/json" hidden onchange="importFile(event)">
+
+<div class="menu-panel" id="menuCompartilhar">
+    <button class="mi" onclick="sharePNG()"><i class="far fa-image"></i>PNG</button>
+    <button class="mi" onclick="exportPDF()"><i class="far fa-file-pdf"></i>PDF</button>
+    <button class="mi" onclick="copyTableImage()"><i class="far fa-copy"></i>Copiar imagem</button>
+    <div class="mi-sep"></div>
+    <button class="mi" onclick="openShareModal()"><i class="fab fa-twitter"></i>X (Twitter)</button>
+    <button class="mi" onclick="compartilharNoTelegram()"><i class="fab fa-telegram"></i>Telegram</button>
+</div>
+
+<div class="selbar" id="selBar">
+    <span class="sel-label" id="selLabel">Linha</span>
+    <label class="sb-color" title="Cor de fundo"><i class="fas fa-fill-drip"></i>Fundo<input type="color" id="selColor" value="#e9e4ef" oninput="selColor(this.value)"></label>
+    <label class="sb-color" title="Cor das letras"><i class="fas fa-font"></i>Letra<input type="color" id="selTextColor" value="#1f1d24" oninput="selTextColor(this.value)"></label>
+    <button onclick="selBold()" title="Negrito / normal"><i class="fas fa-bold"></i>Negrito</button>
+    <span class="sb-grp">Mover</span>
+    <button id="mvA" onclick="selMove(-1)" title="Mover"><i class="fas fa-arrow-up"></i></button>
+    <button id="mvB" onclick="selMove(1)" title="Mover"><i class="fas fa-arrow-down"></i></button>
+    <button class="sb-del" onclick="selDelete()"><i class="far fa-trash-can"></i>Excluir</button>
+    <span class="sb-sep"></span>
+    <button onclick="clearSel()" title="Fechar (Esc)"><i class="fas fa-xmark"></i></button>
+</div>
+
+<div id="clearModal" class="modal">
+    <div class="modal-content clear-box">
+        <h2>Limpar conteúdo</h2>
+        <p class="clear-q">O que você deseja limpar?</p>
+        <label class="chk-row"><input type="checkbox" id="clrText" onchange="clrSubChanged()"><span>Texto</span></label>
+        <label class="chk-row"><input type="checkbox" id="clrFmt" onchange="clrSubChanged()"><span>Formatação</span></label>
+        <label class="chk-row"><input type="checkbox" id="clrImg" onchange="clrSubChanged()"><span>Imagens</span></label>
+        <label class="chk-row"><input type="checkbox" id="clrAll" onchange="clrAllChanged()"><span>Tudo</span></label>
+        <p class="clear-hint">Vale para as células da tabela. Diferente de "Restaurar padrão", o tema, as colunas e o título continuam como estão, e dá para desfazer.</p>
+        <div class="modal-actions">
+            <button class="modal-btn modal-btn-secondary" onclick="closeClearModal()">Cancelar</button>
+            <button class="modal-btn btn-ink-m" onclick="applyClear()">Limpar</button>
+        </div>
+    </div>
+</div>
+
+<div id="studioModal" class="modal">
+    <div class="studio">
+        <div class="studio-opts">
+            <h2>Hora do Print</h2>
+            <p class="studio-sub">Prepare a tabela para postar.</p>
+            <span class="opt-title">Formato</span>
+            <div class="seg">
+                <label><input type="radio" name="st_fmt" value="insta" checked><span>Instagram</span></label>
+                <label><input type="radio" name="st_fmt" value="a4"><span>A4</span></label>
+                <label><input type="radio" name="st_fmt" value="story"><span>Story</span></label>
+                <label><input type="radio" name="st_fmt" value="wide"><span>16:9</span></label>
+                <label><input type="radio" name="st_fmt" value="custom"><span>Personalizado</span></label>
+            </div>
+            <div class="custom-size" id="stCustom" hidden><input type="number" id="stW" value="1080" min="200" max="4000"> × <input type="number" id="stH" value="1080" min="200" max="4000"> px</div>
+            <span class="opt-title">Margem</span>
+            <div class="seg">
+                <label><input type="radio" name="st_margin" value="small"><span>Pequena</span></label>
+                <label><input type="radio" name="st_margin" value="medium" checked><span>Média</span></label>
+                <label><input type="radio" name="st_margin" value="large"><span>Grande</span></label>
+            </div>
+            <span class="opt-title">Fundo</span>
+            <div class="seg">
+                <label><input type="radio" name="st_bg" value="transparent"><span>Transparente</span></label>
+                <label><input type="radio" name="st_bg" value="page" checked><span>Cor da página</span></label>
+                <label><input type="radio" name="st_bg" value="white"><span>Branco</span></label>
+            </div>
+            <span class="opt-title">Qualidade</span>
+            <div class="seg">
+                <label><input type="radio" name="st_q" value="1"><span>Padrão</span></label>
+                <label><input type="radio" name="st_q" value="2" checked><span>Alta (2×)</span></label>
+                <label><input type="radio" name="st_q" value="3"><span>Máxima (3×)</span></label>
+            </div>
+            <span class="opt-title">Escala</span>
+            <div class="scale-row">80% <input type="range" id="stScale" min="80" max="120" value="100"> 120% <span class="scale-out" id="stScaleOut">100%</span></div>
+            <div class="studio-btns">
+                <button class="sb-main" onclick="stDownload()"><i class="fas fa-download"></i>Baixar PNG</button>
+                <button onclick="stCopy()"><i class="far fa-copy"></i>Copiar imagem</button>
+                <button onclick="studioFullscreen()"><i class="fas fa-expand"></i>Tela cheia (print manual)</button>
+                <button onclick="closePrintStudio()">Fechar</button>
+            </div>
+        </div>
+        <div class="studio-preview">
+            <div class="checker"><img id="stPreview" alt="Prévia da imagem"></div>
+            <div class="st-meta" id="stMeta"></div>
         </div>
     </div>
 </div>
@@ -620,13 +1249,13 @@
 <!-- Modal do Recado -->
 <div id="recadoModal" class="modal">
     <div class="modal-content">
-        <h2>Um Recado Especial ✨</h2>
+        <h2>Um Recado Especial</h2>
         <div class="recado-text">
             <p>Oiii! Fico muito feliz que esteja usando o TabeLaLa! 🧡</p>
             <p>Você sabia que me ajudaria imensamente se compartilhasse o resultado da sua tabela ou uma visão do site nas redes sociais?</p>
             <p>Se postar, não esqueça de me marcar:</p>
             <ul>
-                <li>No Twitter: <b>@studies_lala</b></li>
+                <li>No Twitter: <b>@enaLaLaPril</b></li>
                 <li>No Instagram: <b>@studies_lalaland</b></li>
             </ul>
             <p><b>OBS:</b> Como o acesso ao site é um produto exclusivo, me ajudaria muito se você compartilhasse o resultado da sua tabela ou sua experiência com o site sem divulgar o link direto, tá bom? Assim você valoriza meu trabalho <3</p>
@@ -670,7 +1299,7 @@
             </div>
             
             <p>Texto para compartilhar:</p>
-            <textarea id="tweetText">Minha tabela personalizada! ✨ Fiz usando o site da @studies_lala: https://priprincesa26.github.io/fa-asuatabela/</textarea>
+            <textarea id="tweetText">Minha tabela personalizada! ✨ Fiz usando o site da @enaLaLaPril: https://priprincesa26.github.io/fa-asuatabela/</textarea>
             
             <div class="modal-actions">
                 <button class="modal-btn modal-btn-primary" onclick="copyText()">
@@ -686,6 +1315,83 @@
                     <i class="fas fa-times"></i> Fechar
                 </button>
             </div>
+        </div>
+    </div>
+</div>
+
+<!-- Convite para compartilhar no canal do Telegram -->
+<div id="telegramConvite" class="tg-convite" role="status" aria-live="polite" style="display: none;">
+    <button type="button" class="tg-convite-fechar" onclick="fecharConviteTelegram()" aria-label="Fechar"><i class="fas fa-times"></i></button>
+    <div class="tg-convite-icone"><i class="fab fa-telegram"></i></div>
+    <div class="tg-convite-corpo">
+        <p class="tg-convite-texto">Que tabela incrível! Ela pode ajudar muitos outros vestibulandos se você compartilhar aqui:</p>
+        <button type="button" class="tg-convite-botao" onclick="compartilharNoTelegram()"><i class="fab fa-telegram"></i> Canal do Telegram</button>
+        <button type="button" class="tg-convite-depois" onclick="fecharConviteTelegram()">Agora não</button>
+    </div>
+</div>
+
+<!-- Modal de compartilhamento no Telegram -->
+<div id="telegramModal" class="modal">
+    <div class="modal-content">
+        <h2>Compartilhar sua Tabela no Telegram</h2>
+
+        <div class="loading" id="tgLoading">
+            <div class="loading-spinner"></div>
+            <p>Gerando imagem da sua tabela...</p>
+        </div>
+
+        <div id="tgContent" style="display: none;">
+            <div class="preview-container">
+                <div class="preview-title">Prévia da sua tabela:</div>
+                <div class="preview-image-container">
+                    <img id="tgPreview" class="preview-image" alt="Prévia da tabela">
+                </div>
+            </div>
+
+            <div class="instructions tg-instructions">
+                <h3>Como compartilhar sua tabela no canal:</h3>
+                <ol>
+                    <li>Clique em "Copiar Imagem" (ou em "Baixar Imagem" para salvar a tabela)</li>
+                    <li>Clique em "Abrir Canal" para ir direto ao canal do Telegram</li>
+                    <li>Cole a imagem (Ctrl+V) ou anexe o arquivo baixado</li>
+                    <li>Se quiser, clique em "Copiar Texto" e cole a mensagem junto</li>
+                </ol>
+            </div>
+
+            <p>Texto para compartilhar:</p>
+            <textarea id="tgText">Minha tabela personalizada! ✨ Fiz usando o site da @enaLaLaPril: https://priprincesa26.github.io/fa-asuatabela/</textarea>
+
+            <div class="modal-actions">
+                <button class="modal-btn modal-btn-telegram" onclick="copyTelegramImage()">
+                    <i class="fas fa-image"></i> Copiar Imagem
+                </button>
+                <button class="modal-btn modal-btn-telegram" onclick="downloadImage()">
+                    <i class="fas fa-download"></i> Baixar Imagem
+                </button>
+                <button class="modal-btn modal-btn-telegram" onclick="copyTelegramText()">
+                    <i class="fas fa-copy"></i> Copiar Texto
+                </button>
+                <button class="modal-btn modal-btn-telegram" onclick="openTelegramChannel()">
+                    <i class="fab fa-telegram"></i> Abrir Canal
+                </button>
+                <button class="modal-btn modal-btn-secondary" onclick="closeTelegramModal()">
+                    <i class="fas fa-times"></i> Fechar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal das Tabelas Recentes -->
+<div id="recentModal" class="modal">
+    <div class="modal-content">
+        <h2>Tabelas Recentes</h2>
+        <p class="recent-intro">Aqui ficam as últimas 10 tabelas que você salvou neste dispositivo. Elas ficam guardadas apenas neste navegador, não na nuvem.</p>
+        <div id="recentList" class="recent-list"></div>
+        <div class="modal-actions">
+            <button class="modal-btn modal-btn-secondary" onclick="closeRecentModal()">
+                <i class="fas fa-times"></i> Fechar
+            </button>
         </div>
     </div>
 </div>
@@ -715,7 +1421,146 @@
         rosaCereja: { bgPage: '#FFF0F5', bgCells: '#FFFFFF', borderColor: '#C2185B', textColor: '#880E4F', titleColor: '#C2185B', footerColor: '#F48FB1', headerBgColor: '#F48FB1', headerTextColor: '#FFFFFF', stripedColor: '#FCE4EC', fontFamily: "'Indie Flower', cursive" },
         docePastel: { bgPage: '#e0f7fa', bgCells: '#ffffff', borderColor: '#f48fb1', textColor: '#ad1457', titleColor: '#d81b60', footerColor: '#f48fb1', headerBgColor: '#f48fb1', headerTextColor: '#ffffff', stripedColor: '#fce4ec', fontFamily: "'Comic Neue', cursive" },
         mentaSuave: { bgPage: '#fff5f7', bgCells: '#ffffff', borderColor: '#bbb', textColor: '#333', titleColor: '#d23669', footerColor: '#d23669', headerBgColor: '#ffb6c1', headerTextColor: '#000000', stripedColor: '#f0f0f0', fontFamily: "'Comic Neue', cursive" },
+        // ----- Novos temas -----
+        chiquinhaGonzaga: { bgPage: '#FFF1E6', bgCells: '#FFFAF5', borderColor: '#E07A5F', textColor: '#6B3E2E', titleColor: '#D1603D', footerColor: '#C8553D', headerBgColor: '#F4A58A', headerTextColor: '#5A2A1C', stripedColor: '#FFE3D1', fontFamily: "'Quicksand', sans-serif" },
+        rachelCarson: { bgPage: '#E6F6F5', bgCells: '#F4FCFB', borderColor: '#2A9D8F', textColor: '#16504B', titleColor: '#1F7A70', footerColor: '#1F8277', headerBgColor: '#7ACFC6', headerTextColor: '#0E3B37', stripedColor: '#D2EFEC', fontFamily: "'Trebuchet MS', sans-serif" },
+        janeGoodall: { bgPage: '#F1EEDC', bgCells: '#FAF8EC', borderColor: '#6B705C', textColor: '#3D4030', titleColor: '#4F5D2F', footerColor: '#7A8450', headerBgColor: '#A5A58D', headerTextColor: '#262819', stripedColor: '#E6E3CC', fontFamily: "Georgia, serif" },
+        virginiaWoolf: { bgPage: '#F7F1E3', bgCells: '#FFFDF7', borderColor: '#2B3A55', textColor: '#26324A', titleColor: '#1F2D4A', footerColor: '#5C6B8A', headerBgColor: '#2B3A55', headerTextColor: '#F7F1E3', stripedColor: '#EFE7D2', fontFamily: "Georgia, serif" },
+        coraCoralina: { bgPage: '#F8EBD7', bgCells: '#FDF5E8', borderColor: '#9C5B2E', textColor: '#5B3A21', titleColor: '#8C4A1F', footerColor: '#B5651D', headerBgColor: '#D99A4E', headerTextColor: '#3E2312', stripedColor: '#F1DFC2', fontFamily: "'Shadows Into Light', cursive" },
+        florenceNightingale: { bgPage: '#F2F8FB', bgCells: '#FFFFFF', borderColor: '#3A8FB7', textColor: '#1E3A4C', titleColor: '#1F6F94', footerColor: '#3A8FB7', headerBgColor: '#2A7BA3', headerTextColor: '#FFFFFF', stripedColor: '#E3F1F8', fontFamily: "Arial, sans-serif" },
+        rosalindFranklin: { bgPage: '#EEF2F7', bgCells: '#FFFFFF', borderColor: '#4A5F7A', textColor: '#1F2A3A', titleColor: '#2F4560', footerColor: '#6B7F99', headerBgColor: '#8FA3BF', headerTextColor: '#10192A', stripedColor: '#E1E8F1', fontFamily: "Verdana, sans-serif" },
+        fridaKahlo: { bgPage: '#FFF3C4', bgCells: '#FFFBE6', borderColor: '#C62368', textColor: '#4A1230', titleColor: '#C62368', footerColor: '#00897B', headerBgColor: '#C62368', headerTextColor: '#FFF3C4', stripedColor: '#FFE79A', fontFamily: "'Pacifico', cursive" },
+        tarsilaDoAmaral: { bgPage: '#FFE17A', bgCells: '#FFF3BD', borderColor: '#1B6B3A', textColor: '#1D3B2A', titleColor: '#1B6B3A', footerColor: '#D6336C', headerBgColor: '#1E63C9', headerTextColor: '#FFFFFF', stripedColor: '#FFE98F', fontFamily: "'Architects Daughter', cursive" },
+        ritaLee: { bgPage: '#FDE6F4', bgCells: '#FFF5FB', borderColor: '#8E24AA', textColor: '#4A148C', titleColor: '#D81B90', footerColor: '#8E24AA', headerBgColor: '#D4177F', headerTextColor: '#FFFFFF', stripedColor: '#F6D2EA', fontFamily: "'Dancing Script', cursive" },
+        hipatia: { bgPage: '#171233', bgCells: '#221B47', borderColor: '#D4AF37', textColor: '#EDE7FF', titleColor: '#F0CF65', footerColor: '#D4AF37', headerBgColor: '#4B3B8F', headerTextColor: '#F0CF65', stripedColor: '#2D2560', fontFamily: "Georgia, serif" },
+        maryShelley: { bgPage: '#141318', bgCells: '#1E1C24', borderColor: '#9F86C0', textColor: '#E7E3EE', titleColor: '#C9B6E4', footerColor: '#9F86C0', headerBgColor: '#3B3348', headerTextColor: '#E3D5F5', stripedColor: '#27242F', fontFamily: "'Courier New', monospace" },
+        katherineJohnson: { bgPage: '#0B1426', bgCells: '#111F38', borderColor: '#FF8A3D', textColor: '#E8EEF9', titleColor: '#FFA566', footerColor: '#FF8A3D', headerBgColor: '#FF8A3D', headerTextColor: '#1A0E02', stripedColor: '#182A4A', fontFamily: "'Trebuchet MS', sans-serif" },
     };
+
+    // Estilos (grupos) e informações de cada tema, usados para montar a galeria com miniaturas
+    const presetGroups = [
+        { id: 'pasteis', label: 'Pastéis e Fofos', icon: 'fa-cloud', open: true, themes: [
+            { key: 'doceLavanda', name: 'LaLa', icon: 'fa-heart' },
+            { key: 'rosaCereja', name: 'Malala Y.', icon: 'fa-book' },
+            { key: 'docePastel', name: 'C. Jorgensen', icon: 'fa-venus-mars' },
+            { key: 'mentaSuave', name: 'Jane Austen', icon: 'fa-feather-alt', jane: true },
+            { key: 'chiquinhaGonzaga', name: 'Chiquinha Gonzaga', icon: 'fa-music' }
+        ] },
+        { id: 'natureza', label: 'Natureza', icon: 'fa-leaf', themes: [
+            { key: 'florestaEncantada', name: 'Marie Curie', icon: 'fa-atom' },
+            { key: 'jardimSecreto', name: 'Ana Botafogo', icon: 'fa-shoe-prints' },
+            { key: 'rachelCarson', name: 'Rachel Carson', icon: 'fa-leaf' },
+            { key: 'janeGoodall', name: 'Jane Goodall', icon: 'fa-paw' }
+        ] },
+        { id: 'classicos', label: 'Clássicos e Terrosos', icon: 'fa-book-open', themes: [
+            { key: 'cadernoClassico', name: 'Cleópatra', icon: 'fa-ankh' },
+            { key: 'terracotaSol', name: 'Nise da Silveira', icon: 'fa-brain' },
+            { key: 'virginiaWoolf', name: 'Virginia Woolf', icon: 'fa-book-open' },
+            { key: 'coraCoralina', name: 'Cora Coralina', icon: 'fa-seedling' }
+        ] },
+        { id: 'minimalistas', label: 'Minimalistas e Profissionais', icon: 'fa-briefcase', themes: [
+            { key: 'cinzaMinimalista', name: 'Ada Lovelace', icon: 'fa-laptop-code' },
+            { key: 'florenceNightingale', name: 'Florence Nightingale', icon: 'fa-user-nurse' },
+            { key: 'rosalindFranklin', name: 'Rosalind Franklin', icon: 'fa-dna' }
+        ] },
+        { id: 'vibrantes', label: 'Vibrantes e Alegres', icon: 'fa-palette', themes: [
+            { key: 'fridaKahlo', name: 'Frida Kahlo', icon: 'fa-palette' },
+            { key: 'tarsilaDoAmaral', name: 'Tarsila do Amaral', icon: 'fa-paintbrush' },
+            { key: 'ritaLee', name: 'Rita Lee', icon: 'fa-guitar' }
+        ] },
+        { id: 'escuros', label: 'Escuros e Noturnos', icon: 'fa-moon', themes: [
+            { key: 'brisaDoMar', name: 'Carolina M. Jesus', icon: 'fa-book-reader' },
+            { key: 'ceuEstrelado', name: 'Anna J. Cooper', icon: 'fa-graduation-cap' },
+            { key: 'oceanoProfundo', name: 'C. Lispector', icon: 'fa-pen-nib' },
+            { key: 'grafiteAmarelo', name: 'Rosa Parks', icon: 'fa-bus' },
+            { key: 'hipatia', name: 'Hipátia', icon: 'fa-star' },
+            { key: 'maryShelley', name: 'Mary Shelley', icon: 'fa-ghost' },
+            { key: 'katherineJohnson', name: 'Katherine Johnson', icon: 'fa-rocket' }
+        ] }
+    ];
+
+    const janeThumbColors = ['#ffb6c1', '#ffdf93', '#ff9e9e', '#a0e7ff', '#96f7d2'];
+
+    // Miniatura de uma tabela com as cores de um tema
+    function createThemeThumb(c, jane) {
+        const thumb = document.createElement('div');
+        thumb.className = 'theme-thumb';
+        thumb.style.backgroundColor = c.bgPage;
+
+        const title = document.createElement('div');
+        title.className = 'theme-thumb-title';
+        title.style.backgroundColor = c.titleColor;
+        thumb.appendChild(title);
+
+        const table = document.createElement('div');
+        table.className = 'theme-thumb-table';
+        table.style.backgroundColor = c.borderColor;
+        table.style.borderColor = c.borderColor;
+        for (let r = 0; r < 4; r++) {
+            for (let k = 0; k < 3; k++) {
+                const cell = document.createElement('div');
+                cell.className = 'theme-thumb-cell';
+                const bar = document.createElement('i');
+                if (r === 0) {
+                    cell.style.backgroundColor = jane ? janeThumbColors[k] : c.headerBgColor;
+                    bar.style.backgroundColor = jane ? '#000000' : c.headerTextColor;
+                } else {
+                    cell.style.backgroundColor = c.bgCells;
+                    if (r % 2 === 0) { cell.style.backgroundImage = 'linear-gradient(' + c.stripedColor + ',' + c.stripedColor + ')'; }
+                    if (jane && k === 0) { cell.style.backgroundImage = 'none'; cell.style.backgroundColor = janeThumbColors[r]; }
+                    bar.style.backgroundColor = (jane && k === 0) ? '#000000' : c.textColor;
+                }
+                cell.appendChild(bar);
+                table.appendChild(cell);
+            }
+        }
+        thumb.appendChild(table);
+
+        const foot = document.createElement('div');
+        foot.className = 'theme-thumb-foot';
+        foot.style.backgroundColor = c.footerColor;
+        thumb.appendChild(foot);
+        return thumb;
+    }
+
+    // Monta a galeria "Temas Prontos" agrupada por estilo
+    function renderPresetGallery() {
+        const box = document.getElementById('presetGallery');
+        if (!box) return;
+        box.innerHTML = '';
+        presetGroups.forEach(function(group) {
+            const details = document.createElement('details');
+            details.className = 'theme-group';
+            if (group.open) details.open = true;
+
+            const summary = document.createElement('summary');
+            summary.innerHTML = '<i class="fas ' + group.icon + '"></i><span>' + group.label + ' <span class="theme-group-count">(' + group.themes.length + ')</span></span>';
+            details.appendChild(summary);
+
+            const grid = document.createElement('div');
+            grid.className = 'theme-grid';
+            group.themes.forEach(function(t) {
+                const preset = presets[t.key];
+                if (!preset) return;
+                const card = document.createElement('button');
+                card.type = 'button';
+                card.className = 'theme-card';
+                card.title = t.name;
+                card.appendChild(createThemeThumb(preset, t.jane));
+                const label = document.createElement('div');
+                label.className = 'theme-card-name';
+                label.innerHTML = '<i class="fas ' + t.icon + '"></i>';
+                const nameSpan = document.createElement('span');
+                nameSpan.textContent = t.name;
+                label.appendChild(nameSpan);
+                card.appendChild(label);
+                card.onclick = function() { applyPreset(t.key); };
+                grid.appendChild(card);
+            });
+            details.appendChild(grid);
+            box.appendChild(details);
+        });
+    }
 
     let historyStack = [];
     let isSelectionModeActive = false;
@@ -757,24 +1602,93 @@
         return `#${f(0)}${f(8)}${f(4)}`;
     }
 
+    // Contraste (WCAG) entre duas cores hexadecimais
+    function relLuminance(hex) {
+        const ch = [1, 3, 5].map(function(i) {
+            const v = parseInt(hex.slice(i, i + 2), 16) / 255;
+            return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+        });
+        return 0.2126 * ch[0] + 0.7152 * ch[1] + 0.0722 * ch[2];
+    }
+    function contrastRatio(hexA, hexB) {
+        const la = relLuminance(hexA), lb = relLuminance(hexB);
+        return (Math.max(la, lb) + 0.05) / (Math.min(la, lb) + 0.05);
+    }
+
+    // Calcula as cores da paleta automática a partir da cor base, em fundo claro ou escuro
+    function computeHarmonicColors(baseHex, isDark) {
+        const hsl = hexToHSL(baseHex);
+        if (!isDark) {
+            const contrastL = hsl.l > 50 ? 15 : 90;
+            const textHex = hslToHex(hsl.h, hsl.s, contrastL);
+            return {
+                bgPage: hslToHex(hsl.h, hsl.s, 94),
+                bgCells: hslToHex(hsl.h, hsl.s, 90),
+                headerBgColor: baseHex,
+                stripedColor: hslToHex(hsl.h, hsl.s, 82),
+                borderColor: hslToHex(hsl.h, hsl.s, 50),
+                headerTextColor: textHex,
+                textColor: hslToHex(hsl.h, hsl.s, 20),
+                titleColor: baseHex,
+                footerColor: baseHex
+            };
+        }
+        // Fundo escuro: superfícies bem escuras com o tom da cor base; textos, título e assinatura claros
+        const sat = Math.min(hsl.s, 55);
+        const lightText = hslToHex(hsl.h, Math.min(hsl.s, 40), 96);
+        const darkText = hslToHex(hsl.h, Math.min(hsl.s, 60), 10);
+        const cellsHex = hslToHex(hsl.h, sat, 14);
+        // O cabeçalho usa a cor base; se ela não destacar do fundo ou não deixar o texto legível, usa o tom mais próximo que resolva
+        const headerOk = function(hex) {
+            return contrastRatio(hex, cellsHex) >= 1.8 && Math.max(contrastRatio(hex, lightText), contrastRatio(hex, darkText)) >= 4.5;
+        };
+        let headerHex = baseHex;
+        if (!headerOk(baseHex)) {
+            let found = null;
+            for (let d = 1; d <= 70 && !found; d++) {
+                [hsl.l - d, hsl.l + d].forEach(function(L) {
+                    if (!found && L >= 25 && L <= 88) {
+                        const hx = hslToHex(hsl.h, hsl.s, L);
+                        if (headerOk(hx)) found = hx;
+                    }
+                });
+            }
+            if (found) headerHex = found;
+        }
+        const headerTextHex = contrastRatio(headerHex, lightText) >= contrastRatio(headerHex, darkText) ? lightText : darkText;
+        const accentHex = hslToHex(hsl.h, hsl.s, Math.max(hsl.l, 72));
+        return {
+            bgPage: hslToHex(hsl.h, sat, 9),
+            bgCells: cellsHex,
+            headerBgColor: headerHex,
+            stripedColor: hslToHex(hsl.h, sat, 20),
+            borderColor: hslToHex(hsl.h, sat, 58),
+            headerTextColor: headerTextHex,
+            textColor: hslToHex(hsl.h, Math.min(sat, 30), 90),
+            titleColor: accentHex,
+            footerColor: accentHex
+        };
+    }
+
+    function setPaletteMode(isDark) {
+        document.getElementById('paletteDark').checked = isDark;
+        updatePalettePreview();
+        persistData();
+    }
+
+    // Miniatura ao vivo da paleta que será gerada
+    function updatePalettePreview() {
+        const box = document.getElementById('palettePreview');
+        if (!box) return;
+        const colors = computeHarmonicColors(document.getElementById('basePaletteColor').value, document.getElementById('paletteDark').checked);
+        box.innerHTML = '';
+        box.appendChild(createThemeThumb(colors, false));
+    }
+
     function generateHarmonicPalette() {
         document.getElementById('editableTable').classList.remove('jane-austen-mode');
         const baseHex = document.getElementById('basePaletteColor').value;
-        const hsl = hexToHSL(baseHex);
-        const contrastL = hsl.l > 50 ? 15 : 90;
-        const textHex = hslToHex(hsl.h, hsl.s, contrastL);
-
-        const colors = {
-            bgPage: hslToHex(hsl.h, hsl.s, 94),
-            bgCells: hslToHex(hsl.h, hsl.s, 90),
-            headerBgColor: baseHex,
-            stripedColor: hslToHex(hsl.h, hsl.s, 82),
-            borderColor: hslToHex(hsl.h, hsl.s, 50),
-            headerTextColor: textHex,
-            textColor: hslToHex(hsl.h, hsl.s, 20),
-            titleColor: baseHex,
-            footerColor: baseHex
-        };
+        const colors = computeHarmonicColors(baseHex, document.getElementById('paletteDark').checked);
 
         for (let id in colors) {
             const input = document.getElementById(id);
@@ -790,36 +1704,42 @@
         persistData();
     }
 
+    function buildTableData() {
+        const data = {
+            title: document.getElementById('customTitle').innerHTML,
+            footer: document.getElementById('customFooter').innerHTML,
+            tableHead: document.querySelector('#editableTable thead').innerHTML,
+            tableBody: document.querySelector('#editableTable tbody').innerHTML,
+            settings: {
+                bgPage: document.getElementById('bgPage').value,
+                bgCells: document.getElementById('bgCells').value,
+                borderColor: document.getElementById('borderColor').value,
+                textColor: document.getElementById('textColor').value,
+                titleColor: document.getElementById('titleColor').value,
+                footerColor: document.getElementById('footerColor').value,
+                headerBgColor: document.getElementById('headerBgColor').value,
+                headerTextColor: document.getElementById('headerTextColor').value,
+                stripedColor: document.getElementById('stripedColor').value,
+                fontFamily: document.getElementById('fontFamily').value,
+                hasTitle: document.getElementById('hasTitle').checked,
+                hasFooter: document.getElementById('hasFooter').checked,
+                stripedRows: document.getElementById('stripedRows').checked,
+                isJaneMode: document.getElementById('editableTable').classList.contains('jane-austen-mode'),
+                borderRadius: document.getElementById('borderRadius').value,
+                borderWeight: document.getElementById('borderWeight').value,
+                borderStyle: document.getElementById('borderStyle').value,
+                neonTable: document.getElementById('neonTable').checked,
+                neonTitle: document.getElementById('neonTitle').checked,
+                neonFooter: document.getElementById('neonFooter').checked,
+                paletteDark: document.getElementById('paletteDark').checked
+            }
+        };
+        return data;
+    }
+
     function persistData() {
         try {
-            const data = {
-                title: document.getElementById('customTitle').innerHTML,
-                footer: document.getElementById('customFooter').innerHTML,
-                tableHead: document.querySelector('#editableTable thead').innerHTML,
-                tableBody: document.querySelector('#editableTable tbody').innerHTML,
-                settings: {
-                    bgPage: document.getElementById('bgPage').value,
-                    bgCells: document.getElementById('bgCells').value,
-                    borderColor: document.getElementById('borderColor').value,
-                    textColor: document.getElementById('textColor').value,
-                    titleColor: document.getElementById('titleColor').value,
-                    footerColor: document.getElementById('footerColor').value,
-                    headerBgColor: document.getElementById('headerBgColor').value,
-                    headerTextColor: document.getElementById('headerTextColor').value,
-                    stripedColor: document.getElementById('stripedColor').value,
-                    fontFamily: document.getElementById('fontFamily').value,
-                    hasTitle: document.getElementById('hasTitle').checked,
-                    hasFooter: document.getElementById('hasFooter').checked,
-                    stripedRows: document.getElementById('stripedRows').checked,
-                    isJaneMode: document.getElementById('editableTable').classList.contains('jane-austen-mode'),
-                    borderRadius: document.getElementById('borderRadius').value,
-                    borderWeight: document.getElementById('borderWeight').value,
-                    borderStyle: document.getElementById('borderStyle').value,
-                    neonTable: document.getElementById('neonTable').checked,
-                    neonTitle: document.getElementById('neonTitle').checked,
-                    neonFooter: document.getElementById('neonFooter').checked
-                }
-            };
+            const data = buildTableData();
             localStorage.setItem('tabeLaLaData', JSON.stringify(data));
         } catch (e) {
             console.warn("Espaço insuficiente no navegador.");
@@ -831,13 +1751,13 @@
         if (isSelectionModeActive) { hideMergeUI(); }
     }
 
-    function loadPersistedData() {
-        const saved = localStorage.getItem('tabeLaLaData');
+    function loadPersistedData(override) {
+        const saved = override || localStorage.getItem('tabeLaLaData');
         if (!saved) return false;
         try {
             const data = JSON.parse(saved);
             document.getElementById('customTitle').innerHTML = data.title;
-            document.getElementById('customFooter').innerHTML = data.footer;
+            document.getElementById('customFooter').innerHTML = String(data.footer).replace(/@studies_lala(?![A-Za-z0-9_])/g, '@enaLaLaPril');
             document.querySelector('#editableTable thead').innerHTML = data.tableHead;
             document.querySelector('#editableTable tbody').innerHTML = data.tableBody;
             for (let key in data.settings) {
@@ -973,7 +1893,7 @@
             const stripedColor = document.getElementById('stripedColor').value;
             const style = document.createElement('style');
             style.id = 'custom-striped-style';
-            style.textContent = `.striped-rows tr:nth-child(even) td:not(.col-first) { background-color: ${stripedColor} !important; }`;
+            style.textContent = `.striped-rows tr:nth-child(even) td:not(.col-first) { background-color: ${stripedColor} !important; }` + `.striped-rows.hm-row:not(.jane-austen-mode) tbody tr:nth-child(even) td.col-first { background-color: ${stripedColor} !important; color: var(--cor-letras) !important; font-weight: 400 !important; }` + `.striped-rows.hm-none:not(.jane-austen-mode) tbody tr:nth-child(even) td.col-first { background-color: ${stripedColor} !important; }` + `.striped-rows.hm-col:not(.jane-austen-mode) thead th:not(.col-first), .striped-rows.hm-none:not(.jane-austen-mode) thead th { background-color: ${stripedColor} !important; }`;
             document.head.appendChild(style);
         } else { table.classList.remove('striped-rows'); }
     }
@@ -1138,7 +2058,7 @@
             document.getElementById('loadingIndicator').style.display = 'none';
             document.getElementById('shareContent').style.display = 'block';
             const title = document.getElementById('customTitle').innerText;
-            document.getElementById('tweetText').value = `Minha tabela "${title}"! ✨ Fiz usando o site da @studies_lala: https://priprincesa26.github.io/fa-asuatabela/`;
+            document.getElementById('tweetText').value = `Minha tabela "${title}"! ✨ Fiz usando o site da @enaLaLaPril: https://priprincesa26.github.io/fa-asuatabela/`;
         }).catch(err => { alert("Erro ao gerar imagem."); closeShareModal(); });
     }
 
@@ -1158,7 +2078,7 @@
             const tableClone = tableEl.cloneNode(true);
             captureContainer.appendChild(tableClone);
             if (document.getElementById('hasFooter').checked) captureContainer.appendChild(footerEl.cloneNode(true));
-            html2canvas(captureContainer, { scale: 2, useCORS: true, backgroundColor: null }).then(canvas => {
+            html2canvas(captureContainer, { scale: Math.max(1, Math.min(4, 9000 / Math.max(captureContainer.offsetWidth, captureContainer.offsetHeight))), useCORS: true, backgroundColor: null }).then(canvas => {
                 tableCanvasObj = canvas;
                 tableImageDataUrl = canvas.toDataURL('image/png');
                 const previewImg = document.getElementById('tablePreview');
@@ -1249,7 +2169,7 @@
             if (replyText.includes("outros cupons")) { 
                 addMessage('Sim! 🧡<br>Eu tenho outros cupons disponíveis, e você pode encontrar todos eles no meu Linktree:<br>👉 <a href="https://linktr.ee/lalatears" target="_blank">https://linktr.ee/lalatears</a><br><br>Fique à vontade para conferir e aproveitar os descontos!'); 
             } else if (replyText.includes("aproveitar agora")) { 
-                addMessage("Perfeito! Não se esqueça de usar o cupom <strong>LALAVEST</strong> no site <a href='https://discursivas.com' target='_blank'>discursivas.com</a>. Boas compras!"); 
+                addMessage("Perfeito! Não se esqueça de usar o cupom <strong>LALA</strong> no site <a href='https://www.professorferretto.com.br/' target='_blank'>professorferretto.com.br</a>. Boas compras!"); 
             } else { addMessage("Sem problemas! Fica para a próxima. 😉"); } 
         }, 800); 
     }
@@ -1257,17 +2177,747 @@
     function startChatFlow() { 
         chatMessages.innerHTML = ''; 
         chatReplies.innerHTML = ''; 
-        addMessage('Eu tenho um cupom exclusivo que garante um desconto especial na compra de cursos de matérias isoladas para pré-vestibular no site Discursivas!<br><br>É só acessar <a href="https://discursivas.com" target="_blank">discursivas.com</a> e aplicar o cupom <strong>LALAVEST</strong> na finalização da compra. Aproveite para turbinar seus estudos com materiais completos e focados no que realmente cai na prova!'); 
+        addMessage('Eu tenho um cupom exclusivo que garante um desconto especial no cursinho online do Professor Ferretto, para o ENEM e vestibulares!<br><br>É só acessar <a href="https://www.professorferretto.com.br/" target="_blank">professorferretto.com.br</a> e aplicar o cupom <strong>LALA</strong> na finalização da compra. Aproveite para turbinar seus estudos com aulas, banco de questões e simulados!'); 
         showInitialReplies(); 
     }
 
+    // ===== TABELAS RECENTES (salvas temporariamente neste navegador) =====
+    // Ficam no IndexedDB (muito mais espaço que o localStorage), pois tabelas com imagens nas células podem ser grandes.
+    const RECENT_DB = 'tabeLaLaDB';
+    const RECENT_STORE = 'recentes';
+    const RECENT_LIMIT = 10;
+
+    function openRecentDB() {
+        return new Promise(function(resolve, reject) {
+            if (!window.indexedDB) { reject(new Error('IndexedDB indisponível')); return; }
+            const req = indexedDB.open(RECENT_DB, 1);
+            req.onupgradeneeded = function() { req.result.createObjectStore(RECENT_STORE, { keyPath: 'id' }); };
+            req.onsuccess = function() { resolve(req.result); };
+            req.onerror = function() { reject(req.error); };
+        });
+    }
+
+    async function getRecentTables() {
+        const db = await openRecentDB();
+        return new Promise(function(resolve, reject) {
+            const req = db.transaction(RECENT_STORE, 'readonly').objectStore(RECENT_STORE).getAll();
+            req.onsuccess = function() { resolve(req.result.sort(function(x, y) { return y.id - x.id; })); };
+            req.onerror = function() { reject(req.error); };
+        });
+    }
+
+    async function addRecentTable(entry) {
+        const db = await openRecentDB();
+        return new Promise(function(resolve, reject) {
+            const tx = db.transaction(RECENT_STORE, 'readwrite');
+            const store = tx.objectStore(RECENT_STORE);
+            store.put(entry);
+            const keysReq = store.getAllKeys();
+            keysReq.onsuccess = function() {
+                keysReq.result.sort(function(x, y) { return y - x; }).slice(RECENT_LIMIT).forEach(function(k) { store.delete(k); });
+            };
+            tx.oncomplete = function() { resolve(); };
+            tx.onerror = function() { reject(tx.error); };
+            tx.onabort = function() { reject(tx.error); };
+        });
+    }
+
+    async function removeRecentTable(id) {
+        const db = await openRecentDB();
+        return new Promise(function(resolve, reject) {
+            const tx = db.transaction(RECENT_STORE, 'readwrite');
+            tx.objectStore(RECENT_STORE).delete(id);
+            tx.oncomplete = function() { resolve(); };
+            tx.onerror = function() { reject(tx.error); };
+            tx.onabort = function() { reject(tx.error); };
+        });
+    }
+
+    // Move para o IndexedDB as tabelas recentes que ficaram no localStorage (liberando espaço lá)
+    async function migrateOldRecents() {
+        try {
+            const raw = localStorage.getItem('tabeLaLaRecentes');
+            if (!raw) return;
+            const old = JSON.parse(raw);
+            if (Array.isArray(old)) {
+                const ordered = old.slice().reverse();
+                for (let i = 0; i < ordered.length; i++) { await addRecentTable(ordered[i]); }
+            }
+            localStorage.removeItem('tabeLaLaRecentes');
+        } catch (e) {}
+    }
+
+    async function saveToRecent() {
+        try {
+            const current = JSON.stringify(buildTableData());
+            const list = await getRecentTables();
+            if (list.length && list[0].data === current) { alert('Esta tabela já está salva neste dispositivo!'); return; }
+            let name = document.getElementById('customTitle').textContent.replace(/\s+/g, ' ').trim();
+            if (!name) name = 'Tabela sem título';
+            if (name.length > 60) name = name.slice(0, 57) + '...';
+            await addRecentTable({ id: Date.now(), savedAt: new Date().toISOString(), name: name, data: current });
+            alert('Tabela salva neste dispositivo!');
+        } catch (e) {
+            alert('Não foi possível salvar a tabela neste dispositivo. O armazenamento do navegador pode estar cheio ou bloqueado.');
+        }
+    }
+
+    async function openRecentModal() {
+        await renderRecentList();
+        document.getElementById('recentModal').style.display = 'flex';
+    }
+
+    function closeRecentModal() {
+        document.getElementById('recentModal').style.display = 'none';
+    }
+
+    async function renderRecentList() {
+        const box = document.getElementById('recentList');
+        box.innerHTML = '';
+        let list = [];
+        try { list = await getRecentTables(); } catch (e) {
+            const err = document.createElement('p');
+            err.className = 'recent-empty';
+            err.textContent = 'Não foi possível acessar as tabelas salvas neste navegador.';
+            box.appendChild(err);
+            return;
+        }
+        if (!list.length) {
+            const empty = document.createElement('p');
+            empty.className = 'recent-empty';
+            empty.textContent = 'Você ainda não salvou nenhuma tabela. Clique em "Salvar Temporariamente" para guardar a tabela atual aqui.';
+            box.appendChild(empty);
+            return;
+        }
+        list.forEach(function(item) {
+            const row = document.createElement('div');
+            row.className = 'recent-item';
+
+            const swatch = document.createElement('div');
+            swatch.className = 'recent-swatch';
+            try {
+                const st = JSON.parse(item.data).settings;
+                [st.headerBgColor, st.bgCells, st.borderColor].forEach(function(c) {
+                    const dot = document.createElement('span');
+                    dot.style.backgroundColor = c;
+                    swatch.appendChild(dot);
+                });
+            } catch (e) {}
+            row.appendChild(swatch);
+
+            const info = document.createElement('div');
+            info.className = 'recent-info';
+            const nameEl = document.createElement('div');
+            nameEl.className = 'recent-name';
+            nameEl.textContent = item.name;
+            const dateEl = document.createElement('div');
+            dateEl.className = 'recent-date';
+            dateEl.textContent = 'Salva em ' + new Date(item.savedAt).toLocaleString('pt-BR', { dateStyle: 'short', timeStyle: 'short' });
+            info.appendChild(nameEl);
+            info.appendChild(dateEl);
+            row.appendChild(info);
+
+            const actions = document.createElement('div');
+            actions.className = 'recent-actions';
+            const openBtn = document.createElement('button');
+            openBtn.className = 'modal-btn recent-open';
+            openBtn.innerHTML = '<i class="fas fa-pen"></i> Abrir';
+            openBtn.onclick = function() { openRecentTable(item.id); };
+            const delBtn = document.createElement('button');
+            delBtn.className = 'modal-btn recent-del';
+            delBtn.innerHTML = '<i class="fas fa-trash"></i> Excluir';
+            delBtn.onclick = function() { deleteRecentTable(item.id); };
+            actions.appendChild(openBtn);
+            actions.appendChild(delBtn);
+            row.appendChild(actions);
+
+            box.appendChild(row);
+        });
+    }
+
+    async function openRecentTable(id) {
+        let item = null;
+        try { item = (await getRecentTables()).find(function(t) { return t.id === id; }); } catch (e) {}
+        if (!item) { alert('Não foi possível abrir essa tabela.'); return; }
+        if (!confirm('Abrir esta tabela vai substituir a tabela que está na tela agora. Se quiser guardar a atual, clique em "Salvar Temporariamente" antes. Deseja continuar?')) return;
+        try {
+            localStorage.removeItem('tabeLaLaData');
+            localStorage.setItem('tabeLaLaData', item.data);
+            location.reload();
+        } catch (e) {
+            // Tabela grande demais para o salvamento automático: carrega direto na tela, sem recarregar a página
+            document.getElementById('editableTable').classList.remove('jane-austen-mode');
+            historyStack = [];
+            hideMergeUI();
+            if (loadPersistedData(item.data)) { closeRecentModal(); }
+            else { alert('Não foi possível abrir essa tabela.'); }
+        }
+    }
+
+    async function deleteRecentTable(id) {
+        if (!confirm('Excluir esta tabela dos recentes?')) return;
+        try { await removeRecentTable(id); } catch (e) {}
+        renderRecentList();
+    }
+
+    document.getElementById('recentModal').addEventListener('click', function(e) {
+        if (e.target === this) closeRecentModal();
+    });
+
+    migrateOldRecents();
+
+    // ===== CONVITE PARA COMPARTILHAR NO CANAL DO TELEGRAM =====
+    const TELEGRAM_CANAL = 'https://t.me/+JUvs3XPMKp5hZTRh';
+    const TELEGRAM_ESPERA_MS = 10000;
+    let telegramTimer = null;
+    let telegramConviteMostrado = false;
+
+    // Uma célula conta como preenchida quando tem texto e esse texto não é mais o que o site coloca de exemplo
+    function celulaFoiPreenchida(cell) {
+        const texto = (cell.textContent || '').replace(/\u00a0/g, ' ').replace(/\s+/g, ' ').trim();
+        if (!texto) return false;
+        return !/^(Cabeçalho \d+|Linha \d+ Col \d+|Nova Linha|Conteúdo)$/i.test(texto);
+    }
+
+    function tabelaCompletamentePreenchida() {
+        const cells = Array.from(document.querySelectorAll('#editableTable th, #editableTable td'));
+        return cells.length > 0 && cells.every(celulaFoiPreenchida);
+    }
+
+    // Cada alteração no texto de uma célula reinicia a contagem dos 10 segundos
+    function agendarConviteTelegram() {
+        if (telegramConviteMostrado) return;
+        clearTimeout(telegramTimer);
+        telegramTimer = setTimeout(verificarConviteTelegram, TELEGRAM_ESPERA_MS);
+    }
+
+    function verificarConviteTelegram() {
+        if (telegramConviteMostrado || !tabelaCompletamentePreenchida()) return;
+        const ocupado = document.body.classList.contains('print-mode') ||
+            Array.from(document.querySelectorAll('.modal')).some(function(m) { return m.style.display === 'flex'; });
+        if (ocupado) { telegramTimer = setTimeout(verificarConviteTelegram, TELEGRAM_ESPERA_MS); return; }
+        telegramConviteMostrado = true;
+        document.getElementById('telegramConvite').style.display = 'flex';
+    }
+
+    function fecharConviteTelegram() { document.getElementById('telegramConvite').style.display = 'none'; }
+
+    function compartilharNoTelegram() {
+        fecharConviteTelegram();
+        openTelegramModal();
+    }
+
+    function openTelegramModal() {
+        document.getElementById('telegramModal').style.display = 'flex';
+        document.getElementById('tgLoading').style.display = 'block';
+        document.getElementById('tgContent').style.display = 'none';
+        captureTableImage().then(() => {
+            document.getElementById('tgPreview').src = tableImageDataUrl;
+            document.getElementById('tgLoading').style.display = 'none';
+            document.getElementById('tgContent').style.display = 'block';
+            const title = document.getElementById('customTitle').innerText;
+            document.getElementById('tgText').value = `Minha tabela "${title}"! ✨ Fiz usando o site da @enaLaLaPril: https://priprincesa26.github.io/fa-asuatabela/`;
+        }).catch(err => { alert("Erro ao gerar imagem."); closeTelegramModal(); });
+    }
+
+    function closeTelegramModal() { document.getElementById('telegramModal').style.display = 'none'; }
+
+    function copyTelegramText() {
+        const textarea = document.getElementById('tgText');
+        textarea.select();
+        try { document.execCommand('copy'); alert('Texto copiado!'); } catch (err) { alert('Erro ao copiar texto.'); }
+    }
+
+    function copyTelegramImage() {
+        const falha = 'Não foi possível copiar a imagem. Clique em "Baixar Imagem" e envie o arquivo no Telegram.';
+        if (!tableCanvasObj || !navigator.clipboard || !window.ClipboardItem) { alert(falha); return; }
+        tableCanvasObj.toBlob(function(blob) {
+            if (!blob) { alert(falha); return; }
+            navigator.clipboard.write([new ClipboardItem({ 'image/png': blob })])
+                .then(function() { alert('Imagem copiada! Agora é só colar (Ctrl+V) no Telegram.'); })
+                .catch(function() { alert(falha); });
+        }, 'image/png');
+    }
+
+    function openTelegramChannel() { window.open(TELEGRAM_CANAL, '_blank'); }
+
+    document.getElementById('editableTable').addEventListener('input', agendarConviteTelegram);
+    document.getElementById('telegramModal').addEventListener('click', function(e) {
+        if (e.target === this) closeTelegramModal();
+    });
+
     window.onload = function() {
-        if (!loadPersistedData()) { applyPreset('doceLavanda'); }
+        if (!loadPersistedData()) { document.getElementById('editableTable').classList.remove('jane-austen-mode'); applyStyles(); persistData(); }
+        renderPresetGallery();
+        updatePalettePreview();
         startChatFlow();
         notificationTimer = setTimeout(showNotification, 60000);
         window.onclick = function(event) { if (event.target == document.getElementById('shareModal') || event.target == document.getElementById('recadoModal')) { closeShareModal(); closeRecadoModal(); } }
         document.body.addEventListener('input', (e) => { if (e.target.hasAttribute('contenteditable')) { persistData(); } });
     };
+</script>
+<script>
+/* ================= TabeLaLa — novas ferramentas ================= */
+const $ = id => document.getElementById(id);
+const clamp = (v, a, b) => Math.min(Math.max(v, a), b);
+
+function toast(msg) {
+    let t = $('toast');
+    if (!t) { t = document.createElement('div'); t.id = 'toast'; t.className = 'toast'; document.body.appendChild(t); }
+    t.textContent = msg; t.classList.add('show');
+    clearTimeout(t._t); t._t = setTimeout(() => t.classList.remove('show'), 2600);
+}
+
+/* ---------- Persistência estendida (quebra de texto) ---------- */
+const _buildTableData = buildTableData;
+buildTableData = function () { const d = _buildTableData(); d.settings.wrapText = $('wrapText').checked; d.settings.headerMode = $('headerMode').value; return d; };
+
+const _loadPersistedData = loadPersistedData;
+loadPersistedData = function (o) {
+    const ok = _loadPersistedData(o);
+    if (ok) { applyWrap(false); setHeaderMode($('headerMode').value || 'both', false); syncFixedLayout(); checkMergedCells(); }
+    return ok;
+};
+
+function applyWrap(commit) {
+    table.classList.toggle('wrap-text', $('wrapText').checked);
+    const wb = $('wrapBtn'); if (wb) wb.classList.toggle('on', $('wrapText').checked);
+    if (commit) persistData();
+    rq();
+}
+
+/* ---------- Barra de edição e modos de cabeçalho ---------- */
+function toggleWrap() { $('wrapText').checked = !$('wrapText').checked; applyWrap(true); }
+function toggleEditDock(force) {
+    const d = $('editDock'), open = force !== undefined ? force : d.hidden;
+    d.hidden = !open;
+    const b = $('editToggle'); b.setAttribute('aria-pressed', open); b.querySelector('i').className = 'fas fa-toggle-' + (open ? 'on' : 'off');
+    try { localStorage.setItem('tabelaDockOpen', open ? '1' : '0'); } catch (e) {}
+}
+function setHeaderMode(m, commit) {
+    if (!['both', 'row', 'col', 'none'].includes(m)) m = 'both';
+    $('headerMode').value = m;
+    ['both', 'row', 'col', 'none'].forEach(k => table.classList.toggle('hm-' + k, k === m));
+    table.classList.toggle('special-header', m === 'both' || m === 'col');
+    document.querySelectorAll('#hmRow .dk-btn').forEach(b => b.classList.toggle('on', b.dataset.hm === m));
+    if (commit) { persistData(); rq(); }
+}
+function isHdrCell(c) {
+    const m = $('headerMode').value || 'both', first = c.classList.contains('col-first'), inHead = !!c.closest('thead');
+    return (inHead && (m === 'both' || m === 'row')) || (first && (m === 'both' || m === 'col'));
+}
+
+/* ---------- Largura de colunas ---------- */
+function syncFixedLayout() {
+    const ths = [...table.rows[0].cells];
+    const has = ths.some(t => t.style.width);
+    table.classList.toggle('fixed-layout', has);
+    if (!has) { table.style.width = ''; return; }
+    let sum = 0;
+    ths.forEach(t => { if (!t.style.width) { t.style.width = '140px'; t.style.minWidth = '140px'; } sum += parseFloat(t.style.width) || 0; });
+    const bw = parseFloat(getComputedStyle(table).borderLeftWidth) || 0;
+    table.style.width = (sum + bw * 2) + 'px';
+}
+function autoWidths() {
+    table.querySelectorAll('th,td').forEach(c => { c.style.width = ''; c.style.minWidth = ''; c.style.maxWidth = ''; });
+    syncFixedLayout(); persistData(); rq(); toast('Larguras ajustadas automaticamente');
+}
+let RES = null;
+function startResize(ev, th) {
+    ev.preventDefault(); hideMergeUI();
+    if (!table.classList.contains('fixed-layout')) {
+        const ths = [...table.rows[0].cells], ws = ths.map(t => t.getBoundingClientRect().width);
+        ths.forEach((t, i) => { t.style.width = ws[i] + 'px'; t.style.minWidth = ws[i] + 'px'; });
+        syncFixedLayout();
+    }
+    RES = { th, x: ev.clientX, w: th.getBoundingClientRect().width };
+    document.addEventListener('pointermove', onResize);
+    document.addEventListener('pointerup', endResize, { once: true });
+    document.body.style.cursor = 'col-resize'; document.body.style.userSelect = 'none';
+}
+function onResize(ev) {
+    if (!RES) return;
+    const w = Math.max(40, Math.round(RES.w + ev.clientX - RES.x));
+    RES.th.style.width = w + 'px'; RES.th.style.minWidth = w + 'px';
+    syncFixedLayout(); rq();
+}
+function endResize() {
+    document.removeEventListener('pointermove', onResize);
+    document.body.style.cursor = ''; document.body.style.userSelect = '';
+    RES = null; persistData(); rq();
+}
+const _addColumn = addColumn; addColumn = function () { _addColumn(); syncFixedLayout(); };
+const _removeColumn = removeColumn; removeColumn = function () { _removeColumn(); syncFixedLayout(); };
+
+/* ---------- Histórico: desfazer / refazer de TUDO ---------- */
+let HU = [], HR = [], HP = null, HT = null, HBusy = false;
+const hSnap = () => JSON.stringify(buildTableData()).replace(/<\/?mark[^>]*>/gi, '');
+function hButtons() { $('btnUndo').disabled = $('dkUndo').disabled = !HU.length; $('btnRedo').disabled = $('dkRedo').disabled = !HR.length; }
+function hSchedule() { if (HBusy || HP === null) return; clearTimeout(HT); HT = setTimeout(hCommit, 450); }
+function hCommit() {
+    clearTimeout(HT); HT = null;
+    if (HBusy || HP === null) return;
+    const s = hSnap(); if (s === HP) return;
+    HU.push(HP); if (HU.length > 60) HU.shift();
+    HP = s; HR = []; hButtons();
+}
+function hRestore(s) {
+    HBusy = true;
+    try { hideMergeUI(); clearSel(); table.classList.remove('jane-austen-mode'); loadPersistedData(s); }
+    finally { HBusy = false; }
+    HP = hSnap(); persistData(); hButtons(); rq();
+}
+function undoAction() { hCommit(); if (!HU.length) { toast('Nada para desfazer'); return; } HR.push(HP); hRestore(HU.pop()); }
+function redoAction() { hCommit(); if (!HR.length) { toast('Nada para refazer'); return; } HU.push(HP); hRestore(HR.pop()); }
+undoMerge = function () { undoAction(); };
+
+const _persistData = persistData;
+persistData = function () { _persistData(); hSchedule(); };
+document.addEventListener('input', e => { if (e.target.id !== 'tableSearch') hSchedule(); }, true);
+document.addEventListener('change', hSchedule, true);
+$('sidebar').addEventListener('click', hSchedule);
+
+document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') { clearSel(); closeMenus(); return; }
+    if (!(e.ctrlKey || e.metaKey) || e.altKey) return;
+    const t = e.target, isField = (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA') && !t.isContentEditable;
+    if (isField) return;
+    const k = e.key.toLowerCase();
+    if (k === 'z') { e.preventDefault(); e.shiftKey ? redoAction() : undoAction(); }
+    else if (k === 'y') { e.preventDefault(); redoAction(); }
+});
+
+/* ---------- Cor do texto selecionado ---------- */
+let lastRange = null;
+document.addEventListener('selectionchange', () => {
+    const s = getSelection(); if (!s.rangeCount) return;
+    const r = s.getRangeAt(0), n = r.commonAncestorContainer, el = n.nodeType === 1 ? n : n.parentElement;
+    if (el && el.closest('#editableTable td, #editableTable th, #customTitle, #customFooter') && !r.collapsed) lastRange = r.cloneRange();
+});
+document.querySelectorAll('.format-toolbar button').forEach(b => b.addEventListener('mousedown', e => e.preventDefault()));
+function applyTextColor(v) {
+    const s = getSelection();
+    if (lastRange) { s.removeAllRanges(); s.addRange(lastRange); }
+    if (!s.rangeCount || s.isCollapsed) { toast('Selecione um trecho do texto primeiro.'); return; }
+    document.execCommand('styleWithCSS', false, true);
+    document.execCommand('foreColor', false, v);
+    persistData();
+}
+
+/* ---------- Limpar conteúdo ---------- */
+function openClearModal() { ['clrText', 'clrFmt', 'clrImg', 'clrAll'].forEach(i => $(i).checked = false); $('clearModal').style.display = 'flex'; }
+function closeClearModal() { $('clearModal').style.display = 'none'; }
+function clrAllChanged() { const a = $('clrAll').checked; ['clrText', 'clrFmt', 'clrImg'].forEach(i => $(i).checked = a); }
+function clrSubChanged() { $('clrAll').checked = ['clrText', 'clrFmt', 'clrImg'].every(i => $(i).checked); }
+function applyClear() {
+    const t = $('clrText').checked, f = $('clrFmt').checked, im = $('clrImg').checked;
+    if (!t && !f && !im) { toast('Marque o que deseja limpar.'); return; }
+    hCommit(); hideMergeUI(); clearSel();
+    const bg = ['backgroundImage', 'backgroundSize', 'backgroundPosition', 'backgroundRepeat'], wd = ['width', 'minWidth', 'maxWidth'];
+    table.querySelectorAll('th,td').forEach(c => {
+        if (t) c.innerHTML = ''; else if (f) c.textContent = c.textContent;
+        if (f) {
+            const s = {}; wd.concat(bg).forEach(k => s[k] = c.style[k]);
+            c.removeAttribute('style'); wd.forEach(k => c.style[k] = s[k]);
+            if (!im) bg.forEach(k => c.style[k] = s[k]);
+        }
+        if (im) { bg.forEach(k => c.style[k] = ''); c.querySelectorAll('img').forEach(x => x.remove()); }
+    });
+    closeClearModal(); applyStyles(); updateFirstColumnStyles(); persistData(); toast('Conteúdo limpo');
+}
+
+/* ---------- Selecionar linha / coluna inteira ---------- */
+let HOV = null, SEL = null, rqf = 0;
+function rq() { if (rqf) return; rqf = requestAnimationFrame(() => { rqf = 0; drawGridTools(); }); }
+function relRect(r) {
+    const w = $('tableWrapper'), wr = w.getBoundingClientRect();
+    return { l: r.left - wr.left + w.scrollLeft - w.clientLeft, t: r.top - wr.top + w.scrollTop - w.clientTop, w: r.width, h: r.height };
+}
+function colLetter(i) { let s = ''; i++; while (i > 0) { const m = (i - 1) % 26; s = String.fromCharCode(65 + m) + s; i = Math.floor((i - 1) / 26); } return s; }
+function div(cls, css) { const d = document.createElement('div'); d.className = cls; Object.assign(d.style, css || {}); return d; }
+
+function drawGridTools() {
+    const g = $('gridTools'); if (!g) return;
+    g.innerHTML = '';
+    if (document.body.classList.contains('print-mode')) return;
+    const T = relRect(table.getBoundingClientRect()), grid = mapTableGrid();
+    [...table.rows].forEach((tr, ri) => {
+        const rr = relRect(tr.getBoundingClientRect());
+        const d = div('rresizer' + (RRES && RRES.tr === tr ? ' drag' : '') + (HOV && HOV.r === ri ? ' near' : ''), { left: (T.l - 36) + 'px', top: (rr.t + rr.h - 6) + 'px', width: '84px' });
+        d.title = 'Arraste para ajustar a altura (duplo clique: automática)';
+        d.addEventListener('pointerdown', ev => startRowResize(ev, tr));
+        d.addEventListener('dblclick', () => { tr.style.height = ''; if (!tr.getAttribute('style')) tr.removeAttribute('style'); persistData(); rq(); });
+        g.appendChild(d);
+    });
+    [...table.rows[0].cells].forEach(th => {
+        if (th.colSpan > 1) return;
+        const r = relRect(th.getBoundingClientRect());
+        const d = div('resizer' + (RES && RES.th === th ? ' drag' : ''), { left: (r.l + r.w - 6) + 'px', top: r.t + 'px', height: r.h + 'px' });
+        d.title = 'Arraste para ajustar a largura'; d.addEventListener('pointerdown', ev => startResize(ev, th)); g.appendChild(d);
+    });
+    if (HOV && document.contains(HOV.cell) && table.rows[HOV.r] && grid[0][HOV.c]) {
+        const rr = relRect(table.rows[HOV.r].getBoundingClientRect());
+        const pr = div('hpill', { left: (T.l - 8) + 'px', top: (rr.t + rr.h / 2) + 'px', transform: 'translate(-100%,-50%)' });
+        pr.innerHTML = '<i class="far fa-square-check"></i><span class="hlabel">' + (HOV.r === 0 ? 'Cabeçalho' : 'Linha ' + HOV.r) + '</span>';
+        pr.title = 'Selecionar ' + (HOV.r === 0 ? 'o cabeçalho' : 'a linha ' + HOV.r);
+        const r0 = HOV.r; pr.addEventListener('click', () => selectLine('row', r0)); g.appendChild(pr);
+        const hc = relRect(grid[0][HOV.c].element.getBoundingClientRect());
+        const pc = div('hpill', { left: (hc.l + hc.w / 2) + 'px', top: (T.t - 30) + 'px', transform: 'translateX(-50%)' });
+        pc.innerHTML = '<i class="far fa-square-check"></i><span class="hlabel">Coluna ' + colLetter(HOV.c) + '</span>';
+        pc.title = 'Selecionar a coluna ' + colLetter(HOV.c);
+        const c0 = HOV.c; pc.addEventListener('click', () => selectLine('col', c0)); g.appendChild(pc);
+    }
+    if (SEL) {
+        let box = null;
+        if (SEL.type === 'row' && table.rows[SEL.index]) {
+            const rr = relRect(table.rows[SEL.index].getBoundingClientRect()); box = { l: T.l, t: rr.t, w: T.w, h: rr.h };
+        } else if (SEL.type === 'col' && grid[0][SEL.index]) {
+            const els = []; grid.forEach(r => { const i = r[SEL.index]; if (i && i.colSpan === 1) els.push(i.element); });
+            const rs = (els.length ? els : [grid[0][SEL.index].element]).map(e => relRect(e.getBoundingClientRect()));
+            const l = Math.min(...rs.map(r => r.l)), rt = Math.max(...rs.map(r => r.l + r.w)); box = { l, t: T.t, w: rt - l, h: T.h };
+        }
+        if (box) g.appendChild(div('sel-box', { left: box.l + 'px', top: box.t + 'px', width: box.w + 'px', height: box.h + 'px' })); else clearSel();
+    }
+}
+function setHover(cell) {
+    const grid = mapTableGrid(); let info = null;
+    outer: for (const row of grid) for (const i of row) if (i && i.element === cell) { info = i; break outer; }
+    if (info) { HOV = { cell, r: info.r, c: info.c }; rq(); }
+}
+function selCells() {
+    const g = mapTableGrid(), s = new Set();
+    if (SEL.type === 'row') (g[SEL.index] || []).forEach(i => i && s.add(i.element));
+    else g.forEach(r => { const i = r[SEL.index]; if (i) s.add(i.element); });
+    return [...s];
+}
+function selectLine(type, index) {
+    SEL = { type, index }; hideMergeUI();
+    $('selLabel').textContent = type === 'row' ? (index === 0 ? 'Cabeçalho' : 'Linha ' + index) : 'Coluna ' + colLetter(index);
+    $('mvA').innerHTML = '<i class="fas fa-arrow-' + (type === 'row' ? 'up' : 'left') + '"></i>'; $('mvB').innerHTML = '<i class="fas fa-arrow-' + (type === 'row' ? 'down' : 'right') + '"></i>';
+    const first = selCells().find(c => !isHdrCell(c)); if (first) { const cs = getComputedStyle(first); $('selColor').value = rgbToHex(cs.backgroundColor); $('selTextColor').value = rgbToHex(cs.color); }
+    $('selBar').classList.add('show'); rq();
+}
+function clearSel() { SEL = null; const b = $('selBar'); if (b) b.classList.remove('show'); rq(); }
+function selEligible() {
+    const cs = selCells().filter(c => !isHdrCell(c));
+    if (!cs.length) toast('O cabeçalho não recebe cor. Escolha outra linha ou coluna.');
+    return cs;
+}
+function selColor(v) { if (!SEL) return; const cs = selEligible(); cs.forEach(c => c.style.setProperty('background-color', v, 'important')); if (cs.length) persistData(); }
+function selTextColor(v) { if (!SEL) return; const cs = selEligible(); cs.forEach(c => c.style.setProperty('color', v, 'important')); if (cs.length) persistData(); }
+function selBold() {
+    if (!SEL) return;
+    const cs = selCells(), all = cs.every(c => parseInt(getComputedStyle(c).fontWeight) >= 600);
+    cs.forEach(c => c.style.fontWeight = all ? '400' : '700'); persistData();
+}
+function selDelete() {
+    if (!SEL) return;
+    const g = mapTableGrid();
+    if (SEL.type === 'row') {
+        if (SEL.index === 0) { toast('O cabeçalho não pode ser excluído.'); return; }
+        if (table.tBodies[0].rows.length <= 1) { toast('A tabela precisa ter pelo menos uma linha.'); return; }
+        if ((g[SEL.index] || []).some(i => i && i.rowSpan > 1)) { toast('Há células mescladas nesta linha. Desfaça a mescla antes de excluir.'); return; }
+        table.rows[SEL.index].remove();
+    } else {
+        if (g[0].length <= 1) { toast('A tabela precisa ter pelo menos uma coluna.'); return; }
+        if (g.some(r => r[SEL.index] && r[SEL.index].colSpan > 1)) { toast('Há células mescladas nesta coluna. Desfaça a mescla antes de excluir.'); return; }
+        g.forEach(r => { if (r[SEL.index]) r[SEL.index].element.remove(); });
+    }
+    clearSel(); checkMergedCells(); updateFirstColumnStyles(); syncFixedLayout(); applyStyles(); persistData(); toast('Excluído');
+}
+function selMove(dir) {
+    if (!SEL) return;
+    if (table.querySelector('[rowspan]:not([rowspan="1"]),[colspan]:not([colspan="1"])')) { toast('Desfaça as mesclas antes de mover.'); return; }
+    const i = SEL.index, j = i + dir;
+    if (SEL.type === 'row') {
+        if (i === 0 || j < 1 || j >= table.rows.length) return;
+        const a = table.rows[i], b = table.rows[j]; dir < 0 ? b.before(a) : b.after(a);
+    } else {
+        if (j < 0 || j >= table.rows[0].cells.length) return;
+        [...table.rows].forEach(r => { const a = r.cells[i], b = r.cells[j]; dir < 0 ? b.before(a) : b.after(a); });
+    }
+    SEL.index = j; selectLine(SEL.type, j);
+    updateFirstColumnStyles(); applyStyles(); persistData();
+}
+table.addEventListener('mouseover', e => { const c = e.target.closest('td,th'); if (c) setHover(c); });
+table.addEventListener('focusin', e => { const c = e.target.closest('td,th'); if (c) setHover(c); });
+$('tableWrapper').addEventListener('mouseleave', () => { HOV = null; rq(); });
+$('tableWrapper').addEventListener('scroll', rq);
+window.addEventListener('resize', () => { rq(); closeMenus(); });
+document.addEventListener('mousedown', e => { if (SEL && !e.target.closest('#selBar,.hpill')) clearSel(); });
+if (window.ResizeObserver) new ResizeObserver(rq).observe(table);
+
+/* ---------- Menus suspensos ---------- */
+let openMenuId = null;
+function toggleMenu(btn, id) {
+    if (openMenuId === id) { closeMenus(); return; }
+    closeMenus();
+    const p = $(id); p.classList.add('show'); btn.classList.add('open'); openMenuId = id;
+    const r = btn.getBoundingClientRect();
+    p.style.left = Math.max(8, Math.min(r.left, innerWidth - p.offsetWidth - 8)) + 'px';
+    p.style.top = (r.bottom + 6) + 'px';
+}
+function closeMenus() {
+    document.querySelectorAll('.menu-panel.show').forEach(p => p.classList.remove('show'));
+    document.querySelectorAll('.tb-btn.open').forEach(b => b.classList.remove('open'));
+    openMenuId = null;
+}
+document.addEventListener('click', e => {
+    const it = e.target.closest('.menu-panel .mi, .menu-panel .mi-card');
+    if (it && !it.classList.contains('mi-check')) { setTimeout(closeMenus, 0); return; }
+    if (!e.target.closest('.menu-panel') && !e.target.closest('[data-menu]')) closeMenus();
+});
+function goToSection(id) {
+    const sb = $('sidebar'); if (sb.classList.contains('collapsed')) toggleSidebar();
+    setTimeout(() => {
+        const el = $(id); if (!el) return;
+        if (innerWidth <= 900) sb.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        sb.scrollTo({ top: el.offsetTop - 10, behavior: 'smooth' });
+        el.classList.add('flash'); setTimeout(() => el.classList.remove('flash'), 1400);
+    }, 80);
+}
+
+/* ---------- Arquivo: exportar / importar ---------- */
+function fileBaseName() { return ($('customTitle').innerText || 'minha-tabela').trim().toLowerCase().replace(/[^a-z0-9à-ú]+/gi, '-').replace(/^-+|-+$/g, '') || 'minha-tabela'; }
+function exportFile() {
+    hCommit();
+    const blob = new Blob([JSON.stringify({ app: 'TabeLaLa', version: 2, data: buildTableData() })], { type: 'application/json' });
+    const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = fileBaseName() + '.tabelala.json';
+    document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+    toast('Arquivo exportado');
+}
+function importFile(ev) {
+    const f = ev.target.files[0]; ev.target.value = ''; if (!f) return;
+    const r = new FileReader();
+    r.onload = () => {
+        try {
+            let o = JSON.parse(r.result); if (o && o.app === 'TabeLaLa' && o.data) o = o.data;
+            if (!o || !o.tableBody) throw 0;
+            hCommit(); hideMergeUI(); clearSel(); table.classList.remove('jane-austen-mode');
+            if (!loadPersistedData(JSON.stringify(o))) throw 0;
+            persistData(); toast('Tabela importada');
+        } catch (e) { toast('Esse arquivo não parece ser uma tabela do TabeLaLa.'); }
+    };
+    r.readAsText(f);
+}
+
+/* ---------- Compartilhar ---------- */
+function sharePNG() { toast('Gerando imagem…'); captureTableImage().then(downloadImage).catch(() => toast('Erro ao gerar imagem.')); }
+function copyBlob(canvas) {
+    if (!(navigator.clipboard && window.ClipboardItem)) { toast('Seu navegador não permite copiar imagem. Use o PNG.'); return; }
+    canvas.toBlob(b => navigator.clipboard.write([new ClipboardItem({ 'image/png': b })]).then(() => toast('Imagem copiada')).catch(() => toast('Não foi possível copiar. Use o PNG.')));
+}
+function copyTableImage() { toast('Gerando imagem…'); captureTableImage().then(() => copyBlob(tableCanvasObj)).catch(() => toast('Erro ao gerar imagem.')); }
+
+/* ---------- Hora do Print ---------- */
+const ST_FORMATS = { insta: [1080, 1080], a4: [1240, 1754], story: [1080, 1920], wide: [1920, 1080] };
+let stCanvas = null, stTimer = null, stTok = 0;
+const stVal = n => { const e = document.querySelector('input[name="' + n + '"]:checked'); return e ? e.value : null; };
+function openPrintStudio() { closeMenus(); hideMergeUI(); $('studioModal').style.display = 'flex'; stRefresh(true); }
+function closePrintStudio() { $('studioModal').style.display = 'none'; }
+function studioFullscreen() { closePrintStudio(); togglePrintMode(); }
+function stRefresh(now) {
+    $('stCustom').hidden = stVal('st_fmt') !== 'custom';
+    $('stScaleOut').textContent = $('stScale').value + '%';
+    clearTimeout(stTimer); stTimer = setTimeout(stRender, now === true ? 0 : 300);
+}
+function stContent() {
+    const c = document.createElement('div');
+    Object.assign(c.style, { position: 'absolute', left: '-99999px', top: '0', display: 'inline-block' });
+    const w = document.createElement('div');
+    Object.assign(w.style, { display: 'inline-flex', flexDirection: 'column', alignItems: 'center', padding: '6px' });
+    const add = (n, keepId) => { const k = n.cloneNode(true); if (!keepId) k.removeAttribute('id'); k.removeAttribute('contenteditable'); w.appendChild(k); };
+    if ($('hasTitle').checked) add($('customTitle'));
+    add(table, true);
+    if ($('hasFooter').checked) add($('customFooter'));
+    c.appendChild(w); document.body.appendChild(c); return c;
+}
+async function stBuild(mult) {
+    const f = stVal('st_fmt'); let W, H, c;
+    if (f === 'custom') { W = clamp(+$('stW').value || 1080, 200, 4000); H = clamp(+$('stH').value || 1080, 200, 4000); } else [W, H] = ST_FORMATS[f];
+    while (mult > 1 && (W * mult > 8000 || H * mult > 8000 || W * H * mult * mult > 40e6)) mult--;
+    const pad = Math.round(Math.min(W, H) * ({ small: .03, medium: .06, large: .1 }[stVal('st_margin')] || .06));
+    try {
+        c = stContent();
+        const nw = c.offsetWidth, nh = c.offsetHeight, user = (+$('stScale').value || 100) / 100;
+        const sc = Math.min((W - 2 * pad) / nw, (H - 2 * pad) / nh) * user;
+        const cv = await html2canvas(c, { scale: clamp(sc * mult, 1, 8), backgroundColor: null, useCORS: true });
+        const d = document.createElement('canvas'); d.width = W * mult; d.height = H * mult;
+        const x = d.getContext('2d'), bg = stVal('st_bg');
+        if (bg === 'page') { x.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--cor-fundo-pagina').trim() || '#fff'; x.fillRect(0, 0, d.width, d.height); }
+        else if (bg === 'white') { x.fillStyle = '#fff'; x.fillRect(0, 0, d.width, d.height); }
+        x.imageSmoothingEnabled = true; x.imageSmoothingQuality = 'high';
+        const dw = nw * sc * mult, dh = nh * sc * mult; x.drawImage(cv, (d.width - dw) / 2, (d.height - dh) / 2, dw, dh);
+        return { canvas: d, W, H, mult, sc };
+    } finally { if (c) c.remove(); }
+}
+async function stRender() {
+    const tok = ++stTok, meta = $('stMeta');
+    meta.textContent = 'Gerando prévia…';
+    try {
+        const r = await stBuild(1); if (tok !== stTok) return;
+        stCanvas = r.canvas; $('stPreview').src = r.canvas.toDataURL('image/png');
+        const q = +stVal('st_q') || 2;
+        meta.textContent = r.W + ' × ' + r.H + ' px (arquivo final: ' + (r.W * q) + ' × ' + (r.H * q) + ' px)' +
+            (r.sc < 0.6 ? '. Tabela grande para este formato: o texto pode ficar pequeno. Tente A4 ou Story, ative a quebra de texto ou reduza a escala.' : '');
+    } catch (e) { meta.textContent = 'Não foi possível gerar a prévia.'; }
+}
+async function stFinal() {
+    toast('Gerando imagem em alta qualidade…');
+    try { return (await stBuild(+stVal('st_q') || 2)).canvas; } catch (e) { toast('Erro ao gerar a imagem.'); return null; }
+}
+async function stDownload() {
+    const c = await stFinal(); if (!c) return;
+    c.toBlob(b => {
+        const a = document.createElement('a'); a.href = URL.createObjectURL(b); a.download = fileBaseName() + '.png';
+        document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 2000); toast('Imagem baixada');
+    }, 'image/png');
+}
+async function stCopy() { const c = await stFinal(); if (c) copyBlob(c); }
+$('studioModal').addEventListener('input', stRefresh);
+$('studioModal').addEventListener('change', stRefresh);
+$('studioModal').addEventListener('click', e => { if (e.target.id === 'studioModal') closePrintStudio(); });
+$('clearModal').addEventListener('click', e => { if (e.target.id === 'clearModal') closeClearModal(); });
+
+
+/* ---------- Altura das linhas ---------- */
+let RRES = null;
+function startRowResize(ev, tr) {
+    ev.preventDefault(); hideMergeUI();
+    RRES = { tr, y: ev.clientY, h: tr.getBoundingClientRect().height };
+    document.addEventListener('pointermove', onRowResize);
+    document.addEventListener('pointerup', endRowResize, { once: true });
+    document.body.style.cursor = 'row-resize'; document.body.style.userSelect = 'none';
+}
+function onRowResize(ev) {
+    if (!RRES) return;
+    const h = Math.max(24, Math.round(RRES.h + ev.clientY - RRES.y));
+    RRES.tr.style.height = h + 'px'; rq();
+}
+function endRowResize() {
+    document.removeEventListener('pointermove', onRowResize);
+    document.body.style.cursor = ''; document.body.style.userSelect = '';
+    RRES = null; persistData(); rq();
+}
+function autoHeights() {
+    table.querySelectorAll('tr').forEach(r => { r.style.height = ''; if (!r.getAttribute('style')) r.removeAttribute('style'); });
+    persistData(); rq(); toast('Alturas ajustadas automaticamente');
+}
+
+/* ---------- Pop-ups: trava a rolagem do fundo enquanto algum estiver aberto ---------- */
+function syncModalLock() {
+    const open = [...document.querySelectorAll('.modal, .tg-convite')].some(m => m.style.display === 'flex');
+    document.documentElement.classList.toggle('modal-open', open);
+    document.body.classList.toggle('modal-open', open);
+}
+const modalObs = new MutationObserver(syncModalLock);
+document.querySelectorAll('.modal, .tg-convite').forEach(m => modalObs.observe(m, { attributes: true, attributeFilter: ['style'] }));
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && $('telegramConvite').style.display === 'flex') fecharConviteTelegram(); });
+
+/* ---------- Inicialização ---------- */
+let dockPref = '1'; try { dockPref = localStorage.getItem('tabelaDockOpen') || '1'; } catch (e) {}
+toggleEditDock(dockPref !== '0');
+window.addEventListener('load', () => setTimeout(() => { setHeaderMode($('headerMode').value || 'both', false); applyWrap(false); HP = hSnap(); hButtons(); syncFixedLayout(); rq(); }, 80));
 </script>
 </body>
 </html>
